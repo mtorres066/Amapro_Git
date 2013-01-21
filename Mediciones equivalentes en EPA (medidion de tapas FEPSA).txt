@@ -1,0 +1,10 @@
+0 espesor
+1 diametro exterior
+2 diametro interior
+3 diametro chuck
+4 vuelo
+5 altura rebordeador
+6 radio exterior
+7 profundidad
+-8 ancho de canal
+8 primer relieve

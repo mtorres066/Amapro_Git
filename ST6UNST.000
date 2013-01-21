@@ -1,0 +1,226 @@
+ %% NO MODIFIQUE NI ELIMINE ESTE ARCHIVO. %% 
+ %% Este archivo contiene información acerca de la instalación de una aplicación. %% 
+ %% Se utilizará para quitar automáticamente de su PC todos los componentes de la aplicación, si elige hacerlo. %% 
+
+
+NOTE: Inicio de la sección bootstrapper
+
+CONFIG: Title: "Amapro"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "SharedDLLs"
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\VB6STKIT.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\MSVCRT40.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\VB6ES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\ASYCFILT.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\COMCAT.DLL"
+
+ACTION: TLBRegister: "C:\WINNT\SYSTEM32\STDOLE2.TLB"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEPRO32.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\SYSTEM32\OLEAUT32.DLL"
+
+NOTE: Final de la sección bootstrapper
+
+NOTE: Inicializando el programa principal de instalación 'Setup1.exe'....
+
+ACTION: CreateDir: "C:\Documents and Settings\Administrador\Menú Inicio\Programas\Amapro"
+
+ACTION: SharedFile: "C:\WINNT\system32\ADODCES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\STDFTES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\Msstdfmt.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSADODC.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\DATGDES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSDATGRD.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\FM20.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\CMDLGES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\COMDLG32.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCH2ES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCHRT20.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\FLXGDES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSFLXGRD.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCC2ES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSCOMCT2.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\TABCTES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\TABCTL32.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2sodbc.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2sevt.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2irdao.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2ctdao.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2bdao.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\p2bbnd.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\crpaig32.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\ccsdk32.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\implode.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\crpe32.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\crystl32.ocx"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSMSKES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\msmask32.ocx"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\DBGRDES.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\DBGRID32.OCX"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\msvcrt.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\mfc42.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\cpeaut32.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\MSBIND.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\WINNT\system32\VB5DB.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\MSREPL35.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\MSRD2X35.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\expsrv.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\vbajet32.dll"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\MSJINT35.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\MSJTER35.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SystemFile: "C:\WINNT\system32\MSJET35.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: SharedFile: "C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL"
+(El archivo en disco ya estaba actualizado)
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\Msstdfmt.dll"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSADODC.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSDATGRD.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\FM20.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\COMDLG32.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSCHRT20.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSFLXGRD.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSCOMCT2.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\TABCTL32.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\crystl32.ocx"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\msmask32.ocx"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\DBGRID32.OCX"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\mfc42.dll"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\cpeaut32.dll"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSBIND.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSRD2X35.DLL"
+
+ACTION: DllSelfRegister: "C:\WINNT\system32\MSJET35.DLL"
+
+ACTION: DllSelfRegister: "C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL"
+
+ACTION: ShellLink: "Amapro", "Amapro"
+
+ACTION: RegKey: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "App Paths\Amapro.exe"
+
+ACTION: RegValue: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Amapro.exe", ""
+

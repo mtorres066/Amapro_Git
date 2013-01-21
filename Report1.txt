@@ -1,0 +1,26 @@
+﻿- Copiando en [Produccion].[dbo].[AjustesProductoTerminado] 	* 523 filas transferidas	
+- Copiando en [Produccion].[dbo].[Atributos] 			* 3 filas transferidas
+- Copiando en [Produccion].[dbo].[Batch] 			* 395067 filas transferidas
+- Copiando en [Produccion].[dbo].[BatchDatos] 			* 22050 filas transferidas
+- Copiando en [Produccion].[dbo].[BatchInformacion] 		* 76 filas transferidas
+- Copiando en [Produccion].[dbo].[BodegasInventario] 		* 98 filas transferidas
+- Copiando en [Produccion].[dbo].[BodegasInventarioGrupos] 	* 21 filas transferidas
+- Copiando en [Produccion].[dbo].[CapturaDesperdicio] 		* 0 filas transferidas
+- Copiando en [Produccion].[dbo].[CapturaRutinas] 		* 1342659 filas transferidas
+- Copiando en [Produccion].[dbo].[CierreBulto] 			* 19200 filas transferidas
+- Copiando en [Produccion].[dbo].[Clientes] (Correcto)		* 44 filas transferidas
+- Copiando en [Produccion].[dbo].[CobrosProveedor] (Correcto)	* 0 filas transferidas
+- Copiando en [Produccion].[dbo].[Defectos] (Correcto)		* 187 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleCapturaParos] 		* 658897 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleCierrePedidosClientes]	* 0 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleCierrePedidosProve] 	* 32 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleConsumoMateriaPrima] 	* 80233 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleEmpleados] 		* 643 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleEntradasInventario] 	* 165038 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleOrdenProduccion] 	* 3946 filas transferidas
+- Copiando en [Produccion].[dbo].[DetallePedidosClientes] 	* 1 filas transferidas	
+- Copiando en [Produccion].[dbo].[DetallePedidosProveedores] 	* 807 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleProduccionPorOrden] 	* 32155 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleSalidasInventario] 	* 138072 filas transferidas
+- Copiando en [Produccion].[dbo].[DetalleTrasladosInventario] 	* 139122 filas transferidas
+

@@ -1,0 +1,92 @@
+Se ha realizado correctamente la ejecución
+
+- Inicializando la tarea Flujo de datos (Correcto)
+
+- Inicializando conexiones (Correcto)
+
+- Configurando comando SQL (Correcto)
+
+- Configurando la conexión de origen (Correcto)
+
+- Configurando conexión de destino (Correcto)
+
+- Validando (Correcto)
+
+- Preparar para la ejecución (Correcto)
+
+- Ejecutar previamente (Correcto)
+
+- Ejecutando (Correcto)
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[Clientes] (Correcto)
+	* 44 filas transferidas
+
+- Copiando en [Produccion].[dbo].[CobrosProveedor] (Correcto)
+	* 0 filas transferidas
+
+- Copiando en [Produccion].[dbo].[Defectos] (Correcto)
+	* 187 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[DetalleCapturaParos] (Correcto)
+	* 658897 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[DetalleCierrePedidosClientes] (Correcto)
+	* 0 filas transferidas
+
+- Ejecutar posteriormente (Correcto)
+
+- Limpieza (Correcto)
+	Mensajes
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino - Clientes" (40)" escribió 44 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 1 - CobrosProveedor" (134)" escribió 0 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 2 - Defectos" (209)" escribió 187 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 3 - DetalleCapturaParos" (271)" escribió 658897 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 4 - DetalleCierrePedidosClientes" (330)" escribió 0 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+
+

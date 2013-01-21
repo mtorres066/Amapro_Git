@@ -1,0 +1,12 @@
+primera importacion desde la tabla 
+AJUSTESPRODUCTOTERMINADO a la tabla DETALLETRASALADOSINVENTARIO
+
+estas tablas tienen problema con los campos fecha, tienen datos ingresados con una fecha mala
+arreglarlos antes de importar
+
+detalleconsumosmateriaprima
+detalleentradasinventario
+detallepedidosproveedores
+detalleproduccionpororden
+detallesalidasinventario
+detalletrasladosinventario

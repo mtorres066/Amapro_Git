@@ -1,0 +1,241 @@
+Se ha realizado correctamente la ejecución
+
+- Inicializando la tarea Flujo de datos (Correcto)
+
+- Inicializando conexiones (Correcto)
+
+- Configurando comando SQL (Correcto)
+
+- Configurando la conexión de origen (Correcto)
+
+- Configurando conexión de destino (Correcto)
+
+- Validando (Correcto)
+
+- Preparar para la ejecución (Correcto)
+
+- Ejecutar previamente (Correcto)
+
+- Ejecutando (Correcto)
+
+- Copiando en [Produccion].[dbo].[Documentos] (Correcto)
+	* 9 filas transferidas
+
+- Copiando en [Produccion].[dbo].[Empleados] (Correcto)
+	* 357 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosCapturaAumentos] (Correcto)
+	* 3 filas transferidas
+
+- Copiando en [Produccion].[dbo].[EmpleadosCapturaCursos] (Correcto)
+	* 3 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosCapturaFaltas] (Correcto)
+	* 769 filas transferidas
+
+- Copiando en [Produccion].[dbo].[EmpleadosCursos] (Correcto)
+	* 4 filas transferidas
+
+- Copiando en [Produccion].[dbo].[EmpleadosDepartamentos] (Correcto)
+	* 19 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosEscolaridad] (Correcto)
+	* 40 filas transferidas
+
+- Copiando en [Produccion].[dbo].[EmpleadosFaltas] (Correcto)
+	* 26 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosGrupos] (Correcto)
+	* 4 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosHabilidades] (Correcto)
+	* 12 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosHabilidadesEmpleado] (Correcto)
+	* 4 filas transferidas
+
+	Mensajes
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosHabilidadesPuesto] (Correcto)
+	* 1 filas transferidas
+
+	Mensajes
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosHijos] (Correcto)
+	* 144 filas transferidas
+
+	Mensajes
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosPuestos] (Correcto)
+	* 69 filas transferidas
+
+	Mensajes
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Copiando en [Produccion].[dbo].[EmpleadosVacaciones] (Correcto)
+	* 66 filas transferidas
+
+	Mensajes
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090df: Tarea Flujo de datos: Se inició la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x402090e0: Tarea Flujo de datos: Finalizó la confirmación final de la inserción de datos.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+- Ejecutar posteriormente (Correcto)
+
+- Limpieza (Correcto)
+	Mensajes
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino - Documentos" (25)" escribió 9 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 1 - Empleados" (178)" escribió 357 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 2 - EmpleadosCapturaAumentos" (299)" escribió 3 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 3 - EmpleadosCapturaCursos" (358)" escribió 3 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 4 - EmpleadosCapturaFaltas" (418)" escribió 769 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 5 - EmpleadosCursos" (473)" escribió 4 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 6 - EmpleadosDepartamentos" (523)" escribió 19 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 7 - EmpleadosEscolaridad" (571)" escribió 40 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 8 - EmpleadosFaltas" (619)" escribió 26 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 9 - EmpleadosGrupos" (667)" escribió 4 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 10 - EmpleadosHabilidades" (718)" escribió 12 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 11 - EmpleadosHabilidadesEmpleado" (768)" escribió 4 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 12 - EmpleadosHabilidadesPuesto" (816)" escribió 1 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 13 - EmpleadosHijos" (870)" escribió 144 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 14 - EmpleadosPuestos" (925)" escribió 69 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+	* Información 0x4004300b: Tarea Flujo de datos: "componente "Destino 15 - EmpleadosVacaciones" (981)" escribió 66 filas.
+	 (Asistente para importación y exportación de SQL Server)
+	
+
+
+

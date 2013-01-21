@@ -1,0 +1,6 @@
+Línea 120: la clase MSDBGrid.DBGrid del control DBGridConsultas no era una clase de control cargada.
+Línea 251: la clase MSDBGrid.DBGrid del control DBGridConsumos no era una clase de control cargada.
+Línea 306: la clase MSDBGrid.DBGrid del control DBGridCerrarBulto no era una clase de control cargada.
+Línea 315: la clase MSDBGrid.DBGrid del control DBGridTraslados no era una clase de control cargada.
+Línea 443: la clase MSDBGrid.DBGrid del control DBGridDespachos no era una clase de control cargada.
+Línea 452: la clase MSDBGrid.DBGrid del control DBGridAjustes no era una clase de control cargada.

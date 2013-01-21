@@ -1,0 +1,7 @@
+Línea 37: la clase MSDataGridLib.DataGrid del control DBGridBusqueda no era una clase de control cargada.
+Línea 198: la clase TabDlg.SSTab del control TabBodegas no era una clase de control cargada.
+Línea 225: la clase MSDataGridLib.DataGrid del control DataGrid1 no era una clase de control cargada.
+Línea 357: la clase MSComCtl2.DTPicker del control DtpFecIni no era una clase de control cargada.
+Línea 421: la clase MSComCtl2.DTPicker del control DTPFecFin no era una clase de control cargada.
+Línea 516: la clase MSMask.MaskEdBox del control MskFec no era una clase de control cargada.
+Línea 552: la clase MSMask.MaskEdBox del control MskMon no era una clase de control cargada.
