@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ReportesDeEficiencia 
    BackColor       =   &H000080FF&
    Caption         =   "Reportes De Eficiencia"
@@ -198,30 +198,30 @@ Begin VB.Form ReportesDeEficiencia
       TabCaption(0)   =   "Ficha De Paros"
       TabPicture(0)   =   "ReportesDeEficiencia.frx":35CB
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "OptPar(2)"
-      Tab(0).Control(1)=   "OptPar(1)"
-      Tab(0).Control(2)=   "TxtPar"
-      Tab(0).Control(3)=   "OptPar(0)"
-      Tab(0).Control(4)=   "LblGruPar"
-      Tab(0).Control(5)=   "LblParos"
+      Tab(0).Control(0)=   "LblParos"
+      Tab(0).Control(1)=   "LblGruPar"
+      Tab(0).Control(2)=   "OptPar(0)"
+      Tab(0).Control(3)=   "TxtPar"
+      Tab(0).Control(4)=   "OptPar(1)"
+      Tab(0).Control(5)=   "OptPar(2)"
       Tab(0).ControlCount=   6
       TabCaption(1)   =   "Captura De Paros"
       TabPicture(1)   =   "ReportesDeEficiencia.frx":38E5
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "OptCapPar(4)"
-      Tab(1).Control(1)=   "Frame3"
-      Tab(1).Control(2)=   "OptCapPar(3)"
-      Tab(1).Control(3)=   "FrameParos"
-      Tab(1).Control(4)=   "OptCapPar(1)"
-      Tab(1).Control(5)=   "DTPFecFinPar"
-      Tab(1).Control(6)=   "DTPFecIniPar"
-      Tab(1).Control(7)=   "TxtCapPar"
-      Tab(1).Control(8)=   "OptCapPar(2)"
-      Tab(1).Control(9)=   "OptCapPar(0)"
-      Tab(1).Control(10)=   "LblCapParLin"
-      Tab(1).Control(11)=   "LblCapPar"
-      Tab(1).Control(12)=   "LblFecFin"
-      Tab(1).Control(13)=   "lblfecini"
+      Tab(1).Control(0)=   "lblfecini"
+      Tab(1).Control(1)=   "LblFecFin"
+      Tab(1).Control(2)=   "LblCapPar"
+      Tab(1).Control(3)=   "LblCapParLin"
+      Tab(1).Control(4)=   "OptCapPar(0)"
+      Tab(1).Control(5)=   "OptCapPar(2)"
+      Tab(1).Control(6)=   "TxtCapPar"
+      Tab(1).Control(7)=   "DTPFecIniPar"
+      Tab(1).Control(8)=   "DTPFecFinPar"
+      Tab(1).Control(9)=   "OptCapPar(1)"
+      Tab(1).Control(10)=   "FrameParos"
+      Tab(1).Control(11)=   "OptCapPar(3)"
+      Tab(1).Control(12)=   "Frame3"
+      Tab(1).Control(13)=   "OptCapPar(4)"
       Tab(1).ControlCount=   14
       TabCaption(2)   =   "Eficiencia"
       TabPicture(2)   =   "ReportesDeEficiencia.frx":55EF
@@ -278,7 +278,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37914
       End
       Begin MSDataGridLib.DataGrid DbGridGrupos 
@@ -400,7 +400,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37914
       End
       Begin MSComCtl2.DTPicker DTPFecEfiFinAcu 
@@ -414,7 +414,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37914
       End
       Begin MSComCtl2.DTPicker DTPFecEfiAcu 
@@ -428,7 +428,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37914
       End
       Begin VB.Frame Frame3 
@@ -693,7 +693,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37129
       End
       Begin VB.Frame FrameTipos 
@@ -762,7 +762,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37126
       End
       Begin MSComCtl2.DTPicker DTPFecFinPar 
@@ -775,7 +775,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37123
       End
       Begin MSComCtl2.DTPicker DTPFecIniPar 
@@ -788,7 +788,7 @@ Begin VB.Form ReportesDeEficiencia
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   172752899
+         Format          =   51904515
          CurrentDate     =   37123
       End
       Begin VB.TextBox TxtCapPar 
@@ -1343,6 +1343,9 @@ Dim VMetaDolares As Currency
 Dim VMetaCantidad As Currency
 Dim VDiasVenta As Integer
 
+' SE agrega cambios para reporte ejec. en Toneladas
+Dim VMetaToneladas As Currency
+
 Dim RClientes As New ADODB.Recordset
 Dim RFichaTecnica As New ADODB.Recordset
 
@@ -1496,7 +1499,7 @@ Private Sub OptCapPar_Click(Index As Integer)
     If Index = 0 Then
         DTPFecIniPar.Visible = True
         DTPFecFinPar.Visible = True
-        lblfecini.Visible = True
+        LblFecIni.Visible = True
         LblFecFin.Visible = True
         TxtCapPar.Visible = False
         LblCapPar.Caption = ""
@@ -1504,7 +1507,7 @@ Private Sub OptCapPar_Click(Index As Integer)
     ElseIf Index = 1 Then
         DTPFecIniPar.Visible = True
         DTPFecFinPar.Visible = True
-        lblfecini.Visible = True
+        LblFecIni.Visible = True
         LblFecFin.Visible = True
         TxtCapPar.Visible = True
         LblCapPar.Caption = "Linea"
@@ -1513,7 +1516,7 @@ Private Sub OptCapPar_Click(Index As Integer)
     ElseIf Index = 2 Then
         DTPFecIniPar.Visible = False
         DTPFecFinPar.Visible = False
-        lblfecini.Visible = False
+        LblFecIni.Visible = False
         LblFecFin.Visible = False
         TxtCapPar.Visible = True
         LblCapPar.Caption = "Documento"
@@ -1522,7 +1525,7 @@ Private Sub OptCapPar_Click(Index As Integer)
     ElseIf Index = 3 Then
         DTPFecIniPar.Visible = True
         DTPFecFinPar.Visible = True
-        lblfecini.Visible = True
+        LblFecIni.Visible = True
         LblFecFin.Visible = True
         TxtCapPar.Visible = True
         LblCapPar.Caption = "Grupo"
@@ -1531,7 +1534,7 @@ Private Sub OptCapPar_Click(Index As Integer)
     ElseIf Index = 4 Then
         DTPFecIniPar.Visible = True
         DTPFecFinPar.Visible = True
-        lblfecini.Visible = True
+        LblFecIni.Visible = True
         LblFecFin.Visible = True
         TxtCapPar.Visible = True
         LblCapPar.Caption = "Equipo"
@@ -5164,13 +5167,15 @@ On Error Resume Next
                                                                 Do Until RVentas.EOF
                                                                
                                                                     Set RBuscaMetaMensual = New ADODB.Recordset
-                                                                        Call Abrir_Recordset(RBuscaMetaMensual, "Select MetaDolares, MetaCantidad From VentasMetasMensuales where TipoFichaTecnica = '" & RFichaTecnica!TipoVenta & "' And Cliente = '" & RClientes!CodigoCliente & "' And Fecha = #" & Format(VFechaMeta, "mm/dd/yyyy") & "#")
+                                                                        Call Abrir_Recordset(RBuscaMetaMensual, "Select MetaDolares, MetaCantidad, MetaToneladas From VentasMetasMensuales where TipoFichaTecnica = '" & RFichaTecnica!TipoVenta & "' And Cliente = '" & RClientes!CodigoCliente & "' And Fecha = #" & Format(VFechaMeta, "mm/dd/yyyy") & "#")
                                                                               If RBuscaMetaMensual.RecordCount > 0 Then
                                                                                  VMetaDolares = RBuscaMetaMensual!MetaDolares
                                                                                  VMetaCantidad = RBuscaMetaMensual!MetaCantidad
+                                                                                 VMetaToneladas = RBuscaMetaMensual!MetaToneladas
                                                                               Else
                                                                                  VMetaDolares = 0
                                                                                  VMetaCantidad = 0
+                                                                                 VMetaToneladas = 0
                                                                               End If
                                                                                                                                                                    
                                                                                     
@@ -5224,10 +5229,14 @@ On Error Resume Next
                                                                                     End If
                                                                                     
                                                                                     If RVentas!Bodega = "T31" Then
-                                                                                        VTexto = VTexto & RVentas!Cantidad & " " 'TONELADAS ACUMULADAS
+                                                                                        VTexto = VTexto & RVentas!Cantidad & ", " 'TONELADAS ACUMULADAS
                                                                                     Else
-                                                                                        VTexto = VTexto & "0" & ""
+                                                                                        VTexto = VTexto & "0" & ", "
                                                                                     End If
+                                                                                    
+                                                                                    'SE AGREGAN CAMBIOS PARA REP EJEC TEMA: METAS TONELADAS
+                                                                                    VTexto = VTexto & VMetaToneladas & " "
+                                                                                    'MetaToneladas
                                                                                     
                                                                                     Conexion.Execute "Insert Into ReporteEjecutivoVentasNUEVAS Values(" & VTexto & ")"
                                                                                     
@@ -5243,13 +5252,15 @@ On Error Resume Next
                                                                    'VENTAS DISEÑO NUEVO PARA EL REPORTE EJECUTIVO
                                                                                     '______________________________________________________________________________________________
                                                                                     Set RBuscaMetaMensual = New ADODB.Recordset
-                                                                                            Call Abrir_Recordset(RBuscaMetaMensual, "Select MetaDolares, MetaCantidad From VentasMetasMensuales where TipoFichaTecnica = '" & RFichaTecnica!TipoVenta & "' And Cliente = '" & RClientes!CodigoCliente & "' And Fecha = #" & Format(VFechaMeta, "mm/dd/yyyy") & "#")
+                                                                                            Call Abrir_Recordset(RBuscaMetaMensual, "Select MetaDolares, MetaCantidad, MetaToneladas From VentasMetasMensuales where TipoFichaTecnica = '" & RFichaTecnica!TipoVenta & "' And Cliente = '" & RClientes!CodigoCliente & "' And Fecha = #" & Format(VFechaMeta, "mm/dd/yyyy") & "#")
                                                                                                  If RBuscaMetaMensual.RecordCount > 0 Then
                                                                                                     VMetaDolares = RBuscaMetaMensual!MetaDolares
                                                                                                     VMetaCantidad = RBuscaMetaMensual!MetaCantidad
+                                                                                                    VMetaToneladas = RBuscaMetaMensual!MetaToneladas
                                                                                                  Else
                                                                                                     VMetaDolares = 0
                                                                                                     VMetaCantidad = 0
+                                                                                                    VMetaToneladas = 0
                                                                                                  End If
                                                                               
                                                                                     
@@ -5265,7 +5276,8 @@ On Error Resume Next
                                                                                     VTexto = VTexto & "0" & ", " 'DOLARES ACUMULADOS
                                                                                     VTexto = VTexto & VMetaDolares & ", "
                                                                                     VTexto = VTexto & "0" & ", " 'TONELADAS VENTAS
-                                                                                    VTexto = VTexto & "0" & "" 'TONELADAS ACUMULADAS
+                                                                                    VTexto = VTexto & "0" & ", " 'TONELADAS ACUMULADAS
+                                                                                    VTexto = VTexto & VMetaToneladas & "" 'META TONELADAS
                                                                                                                                                                                              
                                                                                     'SOLO SI LA META DOLARES O LA DE CANTIDAD ES MAYOR QUE CERO, AGREGA LOS DATOS DE METAS
                                                                                     If (VMetaDolares > 0 Or VMetaCantidad > 0) Then

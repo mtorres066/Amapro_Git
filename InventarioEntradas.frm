@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form InventarioEntradas 
    BackColor       =   &H00FF8080&
    Caption         =   "Entradas A Inventario"
@@ -2429,11 +2429,11 @@ Private Sub ChkProLib_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Cmd_Cancelar_Click()
-    Frame_Compras_MP.Visible = False
+    'Frame_Compras_MP.Visible = False
 End Sub
 
 Private Sub Cmd_Salir_Click()
-    Frame_Compras_MP.Visible = False
+    'Frame_Compras_MP.Visible = False
 End Sub
 
 Private Sub CmdAgregar2_Click()
@@ -2448,7 +2448,7 @@ Private Sub CmdAgregar2_Click()
     Limpia_CamposDetalle
     
     'INABILITA EL GRID PARA QUE NO PUEDAN MOVERSE POR EL GRID
-    DbGridDetalle.Enabled = False
+    DBGridDetalle.Enabled = False
     
     BEditarDetalle = False
     TxtDocDet.Text = VDocumento
@@ -2537,7 +2537,7 @@ On Error Resume Next
                                      Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng.Text & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                  End If
                                         Llena_CamposDetalle
-                                        Set DbGridDetalle.DataSource = RDetalle
+                                        Set DBGridDetalle.DataSource = RDetalle
 
                     
                 MousePointer = 0
@@ -2647,7 +2647,7 @@ MousePointer = 11
                 End If
                 
                 Llena_CamposDetalle
-                Set DbGridDetalle.DataSource = RDetalle
+                Set DBGridDetalle.DataSource = RDetalle
     
 MousePointer = 0
 
@@ -2679,7 +2679,7 @@ On Error Resume Next
                                      Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng.Text & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
     End If
     
     
@@ -2692,14 +2692,14 @@ On Error Resume Next
     Botones1
     Llena_CamposEncabezado
     FrameDetalle.Visible = True
-    DbGridDetalle.Visible = True
+    DBGridDetalle.Visible = True
     
 End Sub
 
 Private Sub CmdCancelar2_Click()
 On Error Resume Next
     
-    DbGridDetalle.Enabled = True
+    DBGridDetalle.Enabled = True
     Bandera2 = False
     Botones2
     Llena_CamposDetalle
@@ -2739,7 +2739,7 @@ On Error Resume Next
     Botones1
     MskFec.SetFocus
     FrameDetalle.Visible = False
-    DbGridDetalle.Visible = False
+    DBGridDetalle.Visible = False
     TxtReq.Text = GUsuario
         
     
@@ -2945,7 +2945,7 @@ On Error Resume Next
                         RDetalle.Requery
                         RDetalle.MoveLast
                         Llena_CamposDetalle
-                        DbGridDetalle.Enabled = True
+                        DBGridDetalle.Enabled = True
                         CmdAgregar2.SetFocus
                         LblDes.Caption = ""
     
@@ -2960,7 +2960,7 @@ On Error Resume Next
     Botones1
     BEditarEncabezado = False
     FrameDetalle.Visible = False
-    DbGridDetalle.Visible = False
+    DBGridDetalle.Visible = False
     Limpia_CamposEncabezado
     'ASIGNA EL USUARIO
     TxtReq.Text = GUsuario
@@ -3057,14 +3057,14 @@ MousePointer = 11
                             Else
                                 VTexto = VTexto & "0" & ", '" 'PRODUCCION LIBERADA
                             End If
-                            VTexto = VTexto & Txttexto.Item(0).Text & "', '" 'TIPO ENTRADA
-                            VTexto = VTexto & Txttexto.Item(1).Text & "', '" 'PROVEEDOR
-                            VTexto = VTexto & Txttexto.Item(3).Text & "', '" 'NUMERO DOCUMENTO
-                            VTexto = VTexto & Txttexto.Item(2).Text & "', '" 'TIPO DE DOCUMENTO
-                            VTexto = VTexto & Txttexto.Item(4).Text & "', '" 'TRANSPORTISTA
-                            VTexto = VTexto & Txttexto.Item(5).Text & "', '" 'PILOTO
-                            VTexto = VTexto & Txttexto.Item(6).Text & "', '" 'PLACAS CAMION
-                            VTexto = VTexto & Txttexto.Item(7).Text & "', '" 'PLACAS FURGON
+                            VTexto = VTexto & TxtTexto.Item(0).Text & "', '" 'TIPO ENTRADA
+                            VTexto = VTexto & TxtTexto.Item(1).Text & "', '" 'PROVEEDOR
+                            VTexto = VTexto & TxtTexto.Item(3).Text & "', '" 'NUMERO DOCUMENTO
+                            VTexto = VTexto & TxtTexto.Item(2).Text & "', '" 'TIPO DE DOCUMENTO
+                            VTexto = VTexto & TxtTexto.Item(4).Text & "', '" 'TRANSPORTISTA
+                            VTexto = VTexto & TxtTexto.Item(5).Text & "', '" 'PILOTO
+                            VTexto = VTexto & TxtTexto.Item(6).Text & "', '" 'PLACAS CAMION
+                            VTexto = VTexto & TxtTexto.Item(7).Text & "', '" 'PLACAS FURGON
                             VTexto = VTexto & GUsuario & "', '" 'REQUERIDO
                             VTexto = VTexto & "', '" 'LIBERADO
                             VTexto = VTexto & TxtEstado.Text & "'" 'ESTADO LIBERADO NO LIBERADO
@@ -3092,14 +3092,14 @@ MousePointer = 11
                             Else
                                 VTexto = VTexto & "ProduccionLiberada = 0" & ", " 'PRODUCCION LIBERADA
                             End If
-                            VTexto = VTexto & "TipoEntrada = '" & Txttexto.Item(0).Text & "', " 'TIPO ENTRADA
-                            VTexto = VTexto & "Proveedor = '" & Txttexto.Item(1).Text & "', " 'PROVEEDOR
-                            VTexto = VTexto & "NumeroDocumento = '" & Txttexto.Item(3).Text & "', " 'NUMERO DOCUMENTO
-                            VTexto = VTexto & "TipoDeDocumento = '" & Txttexto.Item(2).Text & "', " 'TIPO DE DOCUMENTO
-                            VTexto = VTexto & "Transportista = '" & Txttexto.Item(4).Text & "', " 'TRANSPORTISTA
-                            VTexto = VTexto & "NombreDePiloto = '" & Txttexto.Item(5).Text & "', " 'PILOTO
-                            VTexto = VTexto & "PlacasCamion = '" & Txttexto.Item(6).Text & "', " 'PLACAS CAMION
-                            VTexto = VTexto & "PlacasFurgon = '" & Txttexto.Item(7).Text & "', " 'PLACAS FURGON
+                            VTexto = VTexto & "TipoEntrada = '" & TxtTexto.Item(0).Text & "', " 'TIPO ENTRADA
+                            VTexto = VTexto & "Proveedor = '" & TxtTexto.Item(1).Text & "', " 'PROVEEDOR
+                            VTexto = VTexto & "NumeroDocumento = '" & TxtTexto.Item(3).Text & "', " 'NUMERO DOCUMENTO
+                            VTexto = VTexto & "TipoDeDocumento = '" & TxtTexto.Item(2).Text & "', " 'TIPO DE DOCUMENTO
+                            VTexto = VTexto & "Transportista = '" & TxtTexto.Item(4).Text & "', " 'TRANSPORTISTA
+                            VTexto = VTexto & "NombreDePiloto = '" & TxtTexto.Item(5).Text & "', " 'PILOTO
+                            VTexto = VTexto & "PlacasCamion = '" & TxtTexto.Item(6).Text & "', " 'PLACAS CAMION
+                            VTexto = VTexto & "PlacasFurgon = '" & TxtTexto.Item(7).Text & "', " 'PLACAS FURGON
                             VTexto = VTexto & "Requerido = '" & TxtReq.Text & "'" 'REQUERIDO
                             
                             VTexto = VTexto & " Where Documento = " & VDocumento & " " 'DOCUMENTO
@@ -3238,7 +3238,7 @@ MousePointer = 11
                                                   Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & VDocumento & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                               End If
                                                   Llena_CamposDetalle
-                                                  Set DbGridDetalle.DataSource = RDetalle
+                                                  Set DBGridDetalle.DataSource = RDetalle
     
             
             
@@ -3248,11 +3248,11 @@ MousePointer = 11
     FrameDetalle.Enabled = True
     FrameEncabezado.Enabled = False
     'VISUALIZA EL GRID DE DETALEE
-    DbGridDetalle.Visible = True
+    DBGridDetalle.Visible = True
     
     'HABILITA LAS COLUMNAS PARA PODER MODIFICARLAS PERO SOLO LA UBICACION
-    DbGridDetalle.AllowUpdate = True
-    DbGridDetalle.AllowDelete = True
+    DBGridDetalle.AllowUpdate = True
+    DBGridDetalle.AllowDelete = True
         
     'VISUALIZA LOS BOTONES DEL DETALLE
     Bandera3 = True
@@ -3352,8 +3352,8 @@ End If
     FrameEncabezado.Enabled = True
     
     'DESHABILITA LAS COLUMNAS PARA PODER MODIFICARLAS PERO SOLO LA UBICACION
-    DbGridDetalle.AllowUpdate = True
-    DbGridDetalle.AllowDelete = True
+    DBGridDetalle.AllowUpdate = True
+    DBGridDetalle.AllowDelete = True
     
     CmdBotones2.Item(1).Visible = True
     CmdBotones2.Item(2).Visible = True
@@ -3419,36 +3419,36 @@ End Sub
 Private Sub DBGridBusqueda_DblClick()
     'BODEGA
     If BBodega = True Then
-        TxtBodega.Text = DBGridBusqueda.Columns(0)
+        TxtBodega.Text = DbGridBusqueda.Columns(0)
         TxtBodega.SetFocus
     'BODEGA DETALLE
     ElseIf BBodegaDetalle = True Then
-        TxtBod.Text = DBGridBusqueda.Columns(0)
+        TxtBod.Text = DbGridBusqueda.Columns(0)
         TxtBod.SetFocus
     'PRODUCTO TERMINADO
     ElseIf BProducto = True Then
-        TxtCodPro.Text = DBGridBusqueda.Columns(0)
+        TxtCodPro.Text = DbGridBusqueda.Columns(0)
         TxtCodPro.SetFocus
     'LINEAS
     ElseIf BLineas = True Then
-        TxtLin.Text = DBGridBusqueda.Columns(0)
+        TxtLin.Text = DbGridBusqueda.Columns(0)
         TxtLin.SetFocus
     'TIPO ENTRADAS
     ElseIf BTipoEntrada = True Then
-        Txttexto.Item(0).Text = DBGridBusqueda.Columns(0)
-        Txttexto.Item(0).SetFocus
+        TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(0).SetFocus
     'PROVEEDOR
     ElseIf BProveedor = True Then
-        Txttexto.Item(1).Text = DBGridBusqueda.Columns(0)
-        Txttexto.Item(1).SetFocus
+        TxtTexto.Item(1).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(1).SetFocus
     'TIPO DE DOCUMENTO
     ElseIf BTipoDocumento = True Then
-        Txttexto.Item(2).Text = DBGridBusqueda.Columns(0)
-        Txttexto.Item(2).SetFocus
+        TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(2).SetFocus
     'TARNSPORTISTA
     ElseIf BTransportista = True Then
-        Txttexto.Item(4).Text = DBGridBusqueda.Columns(0)
-        Txttexto.Item(4).SetFocus
+        TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(4).SetFocus
     End If
         TxtBuscar.Text = ""
         FrameBuscar.Visible = False
@@ -3462,36 +3462,36 @@ Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
             If KeyAscii = 43 Then
                 'BODEGA
                 If BBodega = True Then
-                    TxtBodega.Text = DBGridBusqueda.Columns(0)
+                    TxtBodega.Text = DbGridBusqueda.Columns(0)
                     TxtBodega.SetFocus
                 'BODEGA DETALLE
                 ElseIf BBodegaDetalle = True Then
-                    TxtBod.Text = DBGridBusqueda.Columns(0)
+                    TxtBod.Text = DbGridBusqueda.Columns(0)
                     TxtBod.SetFocus
                 'PRODUCTO TERMINADO
                 ElseIf BProducto = True Then
-                    TxtCodPro.Text = DBGridBusqueda.Columns(0)
+                    TxtCodPro.Text = DbGridBusqueda.Columns(0)
                     TxtCodPro.SetFocus
                 'LINEAS
                 ElseIf BLineas = True Then
-                    TxtLin.Text = DBGridBusqueda.Columns(0)
+                    TxtLin.Text = DbGridBusqueda.Columns(0)
                     TxtLin.SetFocus
                 'TIPO ENTRADAS
                 ElseIf BTipoEntrada = True Then
-                    Txttexto.Item(0).Text = DBGridBusqueda.Columns(0)
-                    Txttexto.Item(0).SetFocus
+                    TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(0).SetFocus
                 'PROVEEDOR
                 ElseIf BProveedor = True Then
-                    Txttexto.Item(1).Text = DBGridBusqueda.Columns(0)
-                    Txttexto.Item(1).SetFocus
+                    TxtTexto.Item(1).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(1).SetFocus
                 'TIPO DE DOCUMENTO
                 ElseIf BTipoDocumento = True Then
-                    Txttexto.Item(2).Text = DBGridBusqueda.Columns(0)
-                    Txttexto.Item(2).SetFocus
+                    TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(2).SetFocus
                 'TARNSPORTISTA
                 ElseIf BTransportista = True Then
-                    Txttexto.Item(4).Text = DBGridBusqueda.Columns(0)
-                    Txttexto.Item(4).SetFocus
+                    TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(4).SetFocus
                 End If
                     TxtBuscar.Text = ""
                     FrameBuscar.Visible = False
@@ -3598,7 +3598,7 @@ Set REncabezado = New ADODB.Recordset
                 Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
             End If
             Llena_CamposDetalle
-            Set DbGridDetalle.DataSource = RDetalle
+            Set DBGridDetalle.DataSource = RDetalle
             
             If Err <> 0 Then
                 MsgBox Err.Description
@@ -3742,8 +3742,8 @@ Private Sub TxtBod_DblClick()
             TxtBuscar.SetFocus
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -3776,8 +3776,8 @@ Private Sub TxtBod_KeyPress(KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 Private Sub TxtBodega_Change()
@@ -3812,8 +3812,8 @@ Private Sub TxtBodega_DblClick()
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 Private Sub TxtBodega_GotFocus()
@@ -3845,8 +3845,8 @@ Private Sub TxtBodega_KeyPress(KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 
@@ -3987,8 +3987,8 @@ Private Sub Txtbuscar_Change()
 
     End If
         
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
 End Sub
 Private Sub TxtBuscar_KeyPress(KeyAscii As Integer)
         If KeyAscii = 13 Then
@@ -4060,8 +4060,8 @@ Private Sub TxtCodPro_DblClick()
                 FrameBuscar.Visible = True
                 TxtBuscar.SetFocus
                 Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip, MaterialEmpaque, Size from FichaTecnica Where Activa = -1 Order by Esp_Tec")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
 End Sub
 
 Private Sub TxtCodPro_GotFocus()
@@ -4088,8 +4088,8 @@ Private Sub TxtCodPro_KeyPress(KeyAscii As Integer)
                    FrameBuscar.Visible = True
                    TxtBuscar.SetFocus
                    Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip, MaterialEmpaque, Size from FichaTecnica Where Activa = -1 Order by Esp_Tec")
-                   Set DBGridBusqueda.DataSource = RBusqueda
-                   DBGridBusqueda.Columns(1).Width = "4000"
+                   Set DbGridBusqueda.DataSource = RBusqueda
+                   DbGridBusqueda.Columns(1).Width = "4000"
                 End If
 End Sub
 
@@ -4149,8 +4149,8 @@ Private Sub Txtlin_DblClick()
         FrameBuscar.Visible = True
         TxtBuscar.SetFocus
         Call Abrir_Recordset(RBusqueda, "Select * from Lineas")
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
 End Sub
 
 Private Sub TxtLin_GotFocus()
@@ -4176,8 +4176,8 @@ Private Sub TxtLin_KeyPress(KeyAscii As Integer)
         FrameBuscar.Visible = True
         TxtBuscar.SetFocus
         Call Abrir_Recordset(RBusqueda, "Select * from Lineas")
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
     End If
 
 End Sub
@@ -4362,44 +4362,44 @@ On Error Resume Next
                                 ChkProLib.Value = "0"
                             End If
                             If Not IsNull(REncabezado!TipoEntrada) Then
-                                Txttexto.Item(0).Text = REncabezado!TipoEntrada
+                                TxtTexto.Item(0).Text = REncabezado!TipoEntrada
                             Else
-                                Txttexto.Item(0).Text = ""
+                                TxtTexto.Item(0).Text = ""
                             End If
                             If Not IsNull(REncabezado!Proveedor) Then
-                                Txttexto.Item(1).Text = REncabezado!Proveedor
+                                TxtTexto.Item(1).Text = REncabezado!Proveedor
                             Else
-                                Txttexto.Item(1).Text = ""
+                                TxtTexto.Item(1).Text = ""
                             End If
                             If Not IsNull(REncabezado!NumeroDocumento) Then
-                                Txttexto.Item(3).Text = REncabezado!NumeroDocumento
+                                TxtTexto.Item(3).Text = REncabezado!NumeroDocumento
                             Else
-                                Txttexto.Item(3).Text = ""
+                                TxtTexto.Item(3).Text = ""
                             End If
                             If Not IsNull(REncabezado!TipoDeDocumento) Then
-                                Txttexto.Item(2).Text = REncabezado!TipoDeDocumento
+                                TxtTexto.Item(2).Text = REncabezado!TipoDeDocumento
                             Else
-                                Txttexto.Item(2).Text = ""
+                                TxtTexto.Item(2).Text = ""
                             End If
                             If Not IsNull(REncabezado!Transportista) Then
-                                Txttexto.Item(4).Text = REncabezado!Transportista
+                                TxtTexto.Item(4).Text = REncabezado!Transportista
                             Else
-                                Txttexto.Item(4).Text = ""
+                                TxtTexto.Item(4).Text = ""
                             End If
                             If Not IsNull(REncabezado!NombreDePiloto) Then
-                                Txttexto.Item(5).Text = REncabezado!NombreDePiloto
+                                TxtTexto.Item(5).Text = REncabezado!NombreDePiloto
                             Else
-                                Txttexto.Item(5).Text = ""
+                                TxtTexto.Item(5).Text = ""
                             End If
                             If Not IsNull(REncabezado!PlacasCamion) Then
-                                Txttexto.Item(6).Text = REncabezado!PlacasCamion
+                                TxtTexto.Item(6).Text = REncabezado!PlacasCamion
                             Else
-                                Txttexto.Item(6).Text = ""
+                                TxtTexto.Item(6).Text = ""
                             End If
                             If Not IsNull(REncabezado!PlacasFurgon) Then
-                                Txttexto.Item(7).Text = REncabezado!PlacasFurgon
+                                TxtTexto.Item(7).Text = REncabezado!PlacasFurgon
                             Else
-                                Txttexto.Item(7).Text = ""
+                                TxtTexto.Item(7).Text = ""
                             End If
                             If Not IsNull(REncabezado!Requerido) Then
                                 TxtReq.Text = REncabezado!Requerido
@@ -4558,14 +4558,14 @@ Public Sub Limpia_CamposEncabezado()
                             TxtObs.Text = ""
                             ChkProInt.Value = "0"
                             ChkProLib.Value = "0"
-                            Txttexto.Item(0).Text = ""
-                            Txttexto.Item(1).Text = ""
-                            Txttexto.Item(3).Text = ""
-                            Txttexto.Item(2).Text = ""
-                            Txttexto.Item(4).Text = ""
-                            Txttexto.Item(5).Text = ""
-                            Txttexto.Item(6).Text = ""
-                            Txttexto.Item(7).Text = ""
+                            TxtTexto.Item(0).Text = ""
+                            TxtTexto.Item(1).Text = ""
+                            TxtTexto.Item(3).Text = ""
+                            TxtTexto.Item(2).Text = ""
+                            TxtTexto.Item(4).Text = ""
+                            TxtTexto.Item(5).Text = ""
+                            TxtTexto.Item(6).Text = ""
+                            TxtTexto.Item(7).Text = ""
                             TxtReq.Text = ""
                             TxtLib.Text = ""
                             TxtEstado.Text = ""
@@ -4599,9 +4599,9 @@ Private Sub TxtTexto_Change(Index As Integer)
             If Index = 0 Then
                 Set RBuscaTipoEntrada = New ADODB.Recordset
                     If GOrigenDeDatos = "AmaproAccess" Then
-                        Call Abrir_Recordset(RBuscaTipoEntrada, "select Descripcion From TiposEntradasInventario Where Codigo = '" & Txttexto.Item(0).Text & "'")
+                        Call Abrir_Recordset(RBuscaTipoEntrada, "select Descripcion From TiposEntradasInventario Where Codigo = '" & TxtTexto.Item(0).Text & "'")
                     Else 'ORACLE
-                        Call Abrir_Recordset(RBuscaTipoEntrada, "select Descripcion From TiposEntradasInventario Where UPPER(Codigo) = '" & UCase(Txttexto.Item(0).Text) & "'")
+                        Call Abrir_Recordset(RBuscaTipoEntrada, "select Descripcion From TiposEntradasInventario Where UPPER(Codigo) = '" & UCase(TxtTexto.Item(0).Text) & "'")
                     End If
                         If RBuscaTipoEntrada.RecordCount > 0 Then
                             LblTipEnt.Caption = RBuscaTipoEntrada!Descripcion
@@ -4612,9 +4612,9 @@ Private Sub TxtTexto_Change(Index As Integer)
             ElseIf Index = 1 Then
                 Set RBuscaProveedor = New ADODB.Recordset
                     If GOrigenDeDatos = "AmaproAccess" Then
-                        Call Abrir_Recordset(RBuscaProveedor, "select Descripcion From Proveedores Where CodigoProveedor = '" & Txttexto.Item(1).Text & "'")
+                        Call Abrir_Recordset(RBuscaProveedor, "select Descripcion From Proveedores Where CodigoProveedor = '" & TxtTexto.Item(1).Text & "'")
                     Else 'ORACLE
-                        Call Abrir_Recordset(RBuscaProveedor, "select Descripcion From Proveedores Where UPPER(CodigoProveedor) = '" & UCase(Txttexto.Item(1).Text) & "'")
+                        Call Abrir_Recordset(RBuscaProveedor, "select Descripcion From Proveedores Where UPPER(CodigoProveedor) = '" & UCase(TxtTexto.Item(1).Text) & "'")
                     End If
                         If RBuscaProveedor.RecordCount > 0 Then
                             LblPro.Caption = RBuscaProveedor!Descripcion
@@ -4624,9 +4624,9 @@ Private Sub TxtTexto_Change(Index As Integer)
             ElseIf Index = 2 Then
                 Set RBuscaTipoDocumento = New ADODB.Recordset
                     If GOrigenDeDatos = "AmaproAccess" Then
-                        Call Abrir_Recordset(RBuscaTipoDocumento, "select Descripcion From Documentos Where CodigoDocumento = '" & Txttexto.Item(2).Text & "'")
+                        Call Abrir_Recordset(RBuscaTipoDocumento, "select Descripcion From Documentos Where CodigoDocumento = '" & TxtTexto.Item(2).Text & "'")
                     Else 'ORACLE
-                        Call Abrir_Recordset(RBuscaTipoDocumento, "select Descripcion From Documentos Where UPPER(CodigoDocumento) = '" & UCase(Txttexto.Item(2).Text) & "'")
+                        Call Abrir_Recordset(RBuscaTipoDocumento, "select Descripcion From Documentos Where UPPER(CodigoDocumento) = '" & UCase(TxtTexto.Item(2).Text) & "'")
                     End If
                         If RBuscaTipoDocumento.RecordCount > 0 Then
                             LblTipDoc.Caption = RBuscaTipoDocumento!Descripcion
@@ -4636,9 +4636,9 @@ Private Sub TxtTexto_Change(Index As Integer)
             ElseIf Index = 4 Then
                 Set RBuscaTransportista = New ADODB.Recordset
                     If GOrigenDeDatos = "AmaproAccess" Then
-                        Call Abrir_Recordset(RBuscaTransportista, "select Descripcion From Transportistas Where Codigo = '" & Txttexto.Item(4).Text & "'")
+                        Call Abrir_Recordset(RBuscaTransportista, "select Descripcion From Transportistas Where Codigo = '" & TxtTexto.Item(4).Text & "'")
                     Else 'ORACLE
-                        Call Abrir_Recordset(RBuscaTransportista, "select Descripcion From Transportistas Where UPPER(Codigo) = '" & UCase(Txttexto.Item(4).Text) & "'")
+                        Call Abrir_Recordset(RBuscaTransportista, "select Descripcion From Transportistas Where UPPER(Codigo) = '" & UCase(TxtTexto.Item(4).Text) & "'")
                     End If
                         If RBuscaTransportista.RecordCount > 0 Then
                             LblTra.Caption = RBuscaTransportista!Descripcion
@@ -4672,8 +4672,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from TiposEntradasInventario")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'PROVEEDOR
             ElseIf Index = 1 Then
                 TxtBuscar.Visible = True
@@ -4695,8 +4695,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'TIPO DE DOCUMENTO
             ElseIf Index = 2 Then
                 TxtBuscar.Visible = True
@@ -4718,8 +4718,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoDocumento, Descripcion from Documentos")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'TRANSPORTISTA
             ElseIf Index = 4 Then
                 TxtBuscar.Visible = True
@@ -4741,8 +4741,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from Transportistas")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 
@@ -4772,8 +4772,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from TiposEntradasInventario")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'PROVEEDOR
             ElseIf Index = 1 Then
                 TxtBuscar.Visible = True
@@ -4795,8 +4795,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'TIPO DE DOCUMENTO
             ElseIf Index = 2 Then
                 TxtBuscar.Visible = True
@@ -4818,8 +4818,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoDocumento, Descripcion from Documentos")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             'TRANSPORTISTA
             ElseIf Index = 4 Then
                 TxtBuscar.Visible = True
@@ -4841,8 +4841,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from Transportistas")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
             End If
         End If
 
