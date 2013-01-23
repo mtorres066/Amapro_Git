@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "FM20.DLL"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ConsultaDeProduccionReporte 
    BackColor       =   &H000080FF&
@@ -16,6 +15,15 @@ Begin VB.Form ConsultaDeProduccionReporte
    ScaleHeight     =   8325
    ScaleWidth      =   11910
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton CmdGenera 
+      Height          =   615
+      Left            =   10560
+      Picture         =   "ConsultaDeProduccionReporte.frx":014A
+      Style           =   1  'Graphical
+      TabIndex        =   27
+      Top             =   0
+      Width           =   615
+   End
    Begin VB.Frame FrameBusqueda 
       Caption         =   "Busqueda De Datos"
       BeginProperty Font 
@@ -32,7 +40,7 @@ Begin VB.Form ConsultaDeProduccionReporte
       TabIndex        =   13
       Top             =   0
       Visible         =   0   'False
-      Width           =   8535
+      Width           =   11895
       Begin MSDataGridLib.DataGrid DbGridBusqueda 
          Height          =   6975
          Left            =   120
@@ -103,7 +111,7 @@ Begin VB.Form ConsultaDeProduccionReporte
       Begin VB.CommandButton CmdSale 
          Height          =   615
          Left            =   7440
-         Picture         =   "ConsultaDeProduccionReporte.frx":014A
+         Picture         =   "ConsultaDeProduccionReporte.frx":058C
          Style           =   1  'Graphical
          TabIndex        =   18
          ToolTipText     =   "Sale De Busqueda"
@@ -241,7 +249,7 @@ Begin VB.Form ConsultaDeProduccionReporte
    Begin VB.CommandButton CmdSalida 
       Height          =   615
       Left            =   11160
-      Picture         =   "ConsultaDeProduccionReporte.frx":21BC
+      Picture         =   "ConsultaDeProduccionReporte.frx":25FE
       Style           =   1  'Graphical
       TabIndex        =   5
       ToolTipText     =   "Salida"
@@ -267,7 +275,7 @@ Begin VB.Form ConsultaDeProduccionReporte
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   51183619
+      Format          =   50266115
       CurrentDate     =   37248
    End
    Begin MSComCtl2.DTPicker DtpFecIni 
@@ -289,7 +297,7 @@ Begin VB.Form ConsultaDeProduccionReporte
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   51183619
+      Format          =   50266115
       CurrentDate     =   37248
    End
    Begin TabDlg.SSTab TabGeneral 
@@ -306,7 +314,7 @@ Begin VB.Form ConsultaDeProduccionReporte
       TabHeight       =   1058
       BackColor       =   33023
       TabCaption(0)   =   "Produccion"
-      TabPicture(0)   =   "ConsultaDeProduccionReporte.frx":26D7
+      TabPicture(0)   =   "ConsultaDeProduccionReporte.frx":2B19
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "DbGridGerencia"
       Tab(0).Control(0).Enabled=   0   'False
@@ -318,7 +326,7 @@ Begin VB.Form ConsultaDeProduccionReporte
       Tab(0).Control(3).Enabled=   0   'False
       Tab(0).ControlCount=   4
       TabCaption(1)   =   "Ordenes Abiertas"
-      TabPicture(1)   =   "ConsultaDeProduccionReporte.frx":29F1
+      TabPicture(1)   =   "ConsultaDeProduccionReporte.frx":2E33
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "TabProduccion"
       Tab(1).ControlCount=   1
@@ -720,29 +728,30 @@ Begin VB.Form ConsultaDeProduccionReporte
          _ExtentX        =   20558
          _ExtentY        =   11668
          _Version        =   393216
+         Tab             =   2
          TabHeight       =   706
          BackColor       =   16777215
          ForeColor       =   16711680
          TabCaption(0)   =   "Resumen Ordenes Abiertas"
-         TabPicture(0)   =   "ConsultaDeProduccionReporte.frx":46FB
-         Tab(0).ControlEnabled=   -1  'True
+         TabPicture(0)   =   "ConsultaDeProduccionReporte.frx":4B3D
+         Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "DataOrden"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Detalle Ordenes Abiertas"
-         TabPicture(1)   =   "ConsultaDeProduccionReporte.frx":4717
+         TabPicture(1)   =   "ConsultaDeProduccionReporte.frx":4B59
          Tab(1).ControlEnabled=   0   'False
          Tab(1).Control(0)=   "DbGridOrden"
          Tab(1).ControlCount=   1
          TabCaption(2)   =   "Inventario"
-         TabPicture(2)   =   "ConsultaDeProduccionReporte.frx":4733
-         Tab(2).ControlEnabled=   0   'False
+         TabPicture(2)   =   "ConsultaDeProduccionReporte.frx":4B75
+         Tab(2).ControlEnabled=   -1  'True
          Tab(2).Control(0)=   "DBGridInvProTer"
+         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin MSDataGridLib.DataGrid DataOrden 
             Height          =   6015
-            Left            =   120
-            TabIndex        =   27
+            Left            =   -74880
+            TabIndex        =   4
             ToolTipText     =   "Click en encabezado de columna para indexar"
             Top             =   480
             Width           =   11415
@@ -910,7 +919,7 @@ Begin VB.Form ConsultaDeProduccionReporte
          End
          Begin MSDataGridLib.DataGrid DBGridInvProTer 
             Height          =   6015
-            Left            =   -74880
+            Left            =   120
             TabIndex        =   26
             ToolTipText     =   "Click en encabezado de columna para indexar"
             Top             =   480
@@ -1277,24 +1286,6 @@ Begin VB.Form ConsultaDeProduccionReporte
       TabIndex        =   7
       Top             =   480
       Width           =   555
-   End
-   Begin MSForms.CommandButton CmdGenera 
-      Default         =   -1  'True
-      Height          =   615
-      Left            =   10440
-      TabIndex        =   4
-      ToolTipText     =   "Generar Datos"
-      Top             =   0
-      Width           =   615
-      PicturePosition =   327683
-      Size            =   "1085;1085"
-      Picture         =   "ConsultaDeProduccionReporte.frx":474F
-      FontEffects     =   1073741825
-      FontHeight      =   165
-      FontCharSet     =   0
-      FontPitchAndFamily=   2
-      ParagraphAlign  =   3
-      FontWeight      =   700
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True

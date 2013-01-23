@@ -130,9 +130,9 @@ Begin VB.Form Inicio
    Begin VB.Label Label3 
       Alignment       =   2  'Center
       BackColor       =   &H80000003&
-      Caption         =   "Version 12/11/2011 17:27"
+      Caption         =   "Version 23/01/2013 11:36"
       BeginProperty Font 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   9.75
          Charset         =   0
          Weight          =   700
@@ -279,7 +279,7 @@ Private Sub CmdAceptar_Click()
 On Error Resume Next
         
             
-        If ((TxtPassword.Text = "sesavnelatem") Or (TxtPassword.Text = "SESAVNELATEM")) Then
+        If ((Txtpassword.Text = "sesavnelatem") Or (Txtpassword.Text = "SESAVNELATEM")) Then
             GUsuario = "METAL"
             Unload Me
             MousePointer = 11
@@ -292,15 +292,15 @@ On Error Resume Next
             'PROCESO PARA ENCRIPTAR EL PASSWORD AGARRAMOS CADA LETRA DEL PASSWORD Y LE ASIGNAMOS EL CODIGO ASSCII
             'Y TAMBIEN LE AGREGAMOS UN NUMERO CUALQUIERA (0110) PARA QUE SEA UN POCO MAS DIFICIL DE LEERLO
             Cont = 1
-            VLargo = Len(TxtPassword.Text)
+            VLargo = Len(Txtpassword.Text)
             VNumeroAscii = ""
             VEncriptado = ""
             Do While Cont <= VLargo
-               VNumeroAscii = Asc(Mid(TxtPassword.Text, Cont, 1))
+               VNumeroAscii = Asc(Mid(Txtpassword.Text, Cont, 1))
                VEncriptado = VEncriptado & VNumeroAscii & "0110"
                Cont = Cont + 1
             Loop
-            TxtPassword.Text = VEncriptado
+            Txtpassword.Text = VEncriptado
                               
                         
             'INICIALIZA O CREA LA INTANCIA DEL RECORDSET
@@ -317,7 +317,7 @@ On Error Resume Next
             Else
                 MsgBox "Verifique su Usuario", vbOKOnly + vbInformation, "Informacion"
                 TxtUsuario.SetFocus
-                TxtPassword.Text = ""
+                Txtpassword.Text = ""
                 Exit Sub
             End If
            
@@ -325,15 +325,15 @@ On Error Resume Next
             Set RBuscaPassword = New ADODB.Recordset
             'BUSCA EL PASSWORD
             If GOrigenDeDatos = "AmaproAccess" Then
-                Call Abrir_Recordset(RBuscaPassword, "select * from Usuarios where Usuario = '" & TxtUsuario.Text & "'" & " and Clave = '" & TxtPassword & "'")
+                Call Abrir_Recordset(RBuscaPassword, "select * from Usuarios where Usuario = '" & TxtUsuario.Text & "'" & " and Clave = '" & Txtpassword & "'")
             Else 'ORACLE
-                Call Abrir_Recordset(RBuscaPassword, "select * from Usuarios where UPPER(Usuario) = '" & UCase(TxtUsuario.Text) & "'" & " and UPPER(Clave) = '" & UCase(TxtPassword) & "'")
+                Call Abrir_Recordset(RBuscaPassword, "select * from Usuarios where UPPER(Usuario) = '" & UCase(TxtUsuario.Text) & "'" & " and UPPER(Clave) = '" & UCase(Txtpassword) & "'")
             End If
             If RBuscaPassword.RecordCount > 0 Then
             Else
                 MsgBox "Verifique su Password", vbOKOnly + vbInformation, "Informacion"
                 TxtUsuario.SetFocus
-                TxtPassword.Text = ""
+                Txtpassword.Text = ""
                 Exit Sub
             End If
                         
@@ -417,8 +417,8 @@ On Error Resume Next
                                 Unload Me
             Else
                     MsgBox "Verifique su Password", vbOKOnly + vbInformation, "Informacion"
-                    TxtPassword.Text = ""
-                    TxtPassword.SetFocus
+                    Txtpassword.Text = ""
+                    Txtpassword.SetFocus
                     Exit Sub
             End If
         

@@ -1,8 +1,7 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "FM20.DLL"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ConsultaDeProduccionCalidad 
    BackColor       =   &H000000FF&
@@ -16,6 +15,15 @@ Begin VB.Form ConsultaDeProduccionCalidad
    ScaleHeight     =   8595
    ScaleWidth      =   11880
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton CmdGenera 
+      Height          =   615
+      Left            =   10560
+      Picture         =   "ConsultaDeProduccionCalidad.frx":014A
+      Style           =   1  'Graphical
+      TabIndex        =   32
+      Top             =   120
+      Width           =   615
+   End
    Begin VB.Frame FrameBusqueda 
       Caption         =   "Busqueda De Datos"
       BeginProperty Font 
@@ -27,12 +35,12 @@ Begin VB.Form ConsultaDeProduccionCalidad
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   6855
-      Left            =   0
+      Height          =   8175
+      Left            =   120
       TabIndex        =   19
-      Top             =   0
+      Top             =   120
       Visible         =   0   'False
-      Width           =   8535
+      Width           =   11655
       Begin MSDataGridLib.DataGrid DbGridBusqueda 
          Height          =   5655
          Left            =   120
@@ -124,7 +132,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
       Begin VB.CommandButton CmdSale 
          Height          =   615
          Left            =   7440
-         Picture         =   "ConsultaDeProduccionCalidad.frx":014A
+         Picture         =   "ConsultaDeProduccionCalidad.frx":058C
          Style           =   1  'Graphical
          TabIndex        =   24
          ToolTipText     =   "Sale De Busqueda"
@@ -174,7 +182,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
       TabHeight       =   520
       BackColor       =   255
       TabCaption(0)   =   "Resumen Produccion"
-      TabPicture(0)   =   "ConsultaDeProduccionCalidad.frx":21BC
+      TabPicture(0)   =   "ConsultaDeProduccionCalidad.frx":25FE
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "DbgridMes"
       Tab(0).Control(0).Enabled=   0   'False
@@ -184,7 +192,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
       Tab(0).Control(2).Enabled=   0   'False
       Tab(0).ControlCount=   3
       TabCaption(1)   =   "Detalle Produccion"
-      TabPicture(1)   =   "ConsultaDeProduccionCalidad.frx":21D8
+      TabPicture(1)   =   "ConsultaDeProduccionCalidad.frx":261A
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "DbGridDia"
       Tab(1).Control(0).Enabled=   0   'False
@@ -192,7 +200,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
       Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Detalle Paros"
-      TabPicture(2)   =   "ConsultaDeProduccionCalidad.frx":21F4
+      TabPicture(2)   =   "ConsultaDeProduccionCalidad.frx":2636
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "DbGridParos"
       Tab(2).Control(0).Enabled=   0   'False
@@ -712,7 +720,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
       Begin MSDataGridLib.DataGrid DbGridParos 
          Height          =   6975
          Left            =   -66960
-         TabIndex        =   32
+         TabIndex        =   5
          Top             =   480
          Width           =   3735
          _ExtentX        =   6588
@@ -957,7 +965,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
    Begin VB.CommandButton CmdSalida 
       Height          =   615
       Left            =   11160
-      Picture         =   "ConsultaDeProduccionCalidad.frx":2210
+      Picture         =   "ConsultaDeProduccionCalidad.frx":2652
       Style           =   1  'Graphical
       TabIndex        =   10
       ToolTipText     =   "Salida"
@@ -1029,7 +1037,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   52035587
+      Format          =   52363267
       CurrentDate     =   37248
    End
    Begin MSComCtl2.DTPicker DtpFecIni 
@@ -1051,7 +1059,7 @@ Begin VB.Form ConsultaDeProduccionCalidad
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   52035587
+      Format          =   52363267
       CurrentDate     =   37248
    End
    Begin VB.Label LblLinea 
@@ -1133,23 +1141,6 @@ Begin VB.Form ConsultaDeProduccionCalidad
       TabIndex        =   8
       Top             =   120
       Width           =   765
-   End
-   Begin MSForms.CommandButton CmdGenera 
-      Height          =   615
-      Left            =   10440
-      TabIndex        =   5
-      ToolTipText     =   "Generar Datos"
-      Top             =   120
-      Width           =   615
-      PicturePosition =   327683
-      Size            =   "1085;1085"
-      Picture         =   "ConsultaDeProduccionCalidad.frx":272B
-      FontEffects     =   1073741825
-      FontHeight      =   165
-      FontCharSet     =   0
-      FontPitchAndFamily=   2
-      ParagraphAlign  =   3
-      FontWeight      =   700
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -1729,9 +1720,9 @@ End Sub
 
 Private Sub DBGridBusqueda_DblClick()
             If BLinea = True Then
-                TxtLinea.Text = DBGridBusqueda.Columns(0)
+                TxtLinea.Text = Dbgridbusqueda.Columns(0)
             ElseIf BGrupo = True Then
-                TxtLinea.Text = DBGridBusqueda.Columns(2)
+                TxtLinea.Text = Dbgridbusqueda.Columns(2)
             End If
             FrameBusqueda.Visible = False
             TxtLinea.SetFocus
@@ -1744,9 +1735,9 @@ End Sub
 Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
             If KeyAscii = 43 Then
                 If BLinea = True Then
-                    TxtLinea.Text = DBGridBusqueda.Columns(0)
+                    TxtLinea.Text = Dbgridbusqueda.Columns(0)
                 ElseIf BGrupo = True Then
-                    TxtLinea.Text = DBGridBusqueda.Columns(2)
+                    TxtLinea.Text = Dbgridbusqueda.Columns(2)
                 End If
                 FrameBusqueda.Visible = False
                 TxtLinea.SetFocus
@@ -1863,8 +1854,8 @@ Private Sub TxtBusqueda_Change()
                 End If
             End If
                 
-                    Set DBGridBusqueda.DataSource = RBusqueda
-                    DBGridBusqueda.Columns(1).Width = "4000"
+                    Set Dbgridbusqueda.DataSource = RBusqueda
+                    Dbgridbusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -1906,8 +1897,8 @@ Private Sub TxtLinea_DblClick()
                     BLinea = True
             End If
                     Call Abrir_Recordset(RBusqueda, "Select Linea, Descrip, Grupo From Lineas")
-                    Set DBGridBusqueda.DataSource = RBusqueda
-                    DBGridBusqueda.Columns(1).Width = "4000"
+                    Set Dbgridbusqueda.DataSource = RBusqueda
+                    Dbgridbusqueda.Columns(1).Width = "4000"
                     FrameBusqueda.Visible = True
                     TxtBusqueda.SetFocus
 End Sub
@@ -1932,8 +1923,8 @@ Private Sub TxtLinea_KeyPress(KeyAscii As Integer)
                     BLinea = True
             End If
                     Call Abrir_Recordset(RBusqueda, "Select Linea, Descrip, Grupo From Lineas")
-                    Set DBGridBusqueda.DataSource = RBusqueda
-                    DBGridBusqueda.Columns(1).Width = "4000"
+                    Set Dbgridbusqueda.DataSource = RBusqueda
+                    Dbgridbusqueda.Columns(1).Width = "4000"
                     FrameBusqueda.Visible = True
                     TxtBusqueda.SetFocus
         End If

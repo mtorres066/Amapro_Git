@@ -1,6 +1,5 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "FM20.DLL"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form ConsultaInventarioProductoTerminado 
    BackColor       =   &H00FF8080&
@@ -27,9 +26,9 @@ Begin VB.Form ConsultaInventarioProductoTerminado
          Strikethrough   =   0   'False
       EndProperty
       Height          =   8415
-      Left            =   0
+      Left            =   120
       TabIndex        =   9
-      Top             =   0
+      Top             =   120
       Visible         =   0   'False
       Width           =   9855
       Begin MSDataGridLib.DataGrid Dbgridbusqueda 
@@ -166,7 +165,7 @@ Begin VB.Form ConsultaInventarioProductoTerminado
          Height          =   195
          Index           =   2
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   1
          Top             =   360
          Value           =   -1  'True
          Width           =   1815
@@ -395,6 +394,15 @@ Begin VB.Form ConsultaInventarioProductoTerminado
       Format          =   "#,###,##0"
       PromptChar      =   "_"
    End
+   Begin VB.CommandButton CmdGenera 
+      Height          =   615
+      Left            =   8400
+      Picture         =   "ConsultaInventarioProductoTerminado.frx":8817
+      Style           =   1  'Graphical
+      TabIndex        =   22
+      Top             =   720
+      Width           =   735
+   End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackColor       =   &H00FF8080&
@@ -476,24 +484,6 @@ Begin VB.Form ConsultaInventarioProductoTerminado
       TabIndex        =   4
       Top             =   120
       Width           =   720
-   End
-   Begin MSForms.CommandButton CmdGenera 
-      Default         =   -1  'True
-      Height          =   615
-      Left            =   8280
-      TabIndex        =   1
-      ToolTipText     =   "Generar Datos"
-      Top             =   720
-      Width           =   735
-      PicturePosition =   327683
-      Size            =   "1296;1085"
-      Picture         =   "ConsultaInventarioProductoTerminado.frx":8817
-      FontEffects     =   1073741825
-      FontHeight      =   165
-      FontCharSet     =   0
-      FontPitchAndFamily=   2
-      ParagraphAlign  =   3
-      FontWeight      =   700
    End
 End
 Attribute VB_Name = "ConsultaInventarioProductoTerminado"
