@@ -1,0 +1,9 @@
+23/01/2013
+Cambios reflejados en GitHub y Google Drive. (Nunca trabajar directamente en carpeta GitHub)
+- Se logró compilar el Amaprofepsa.exe
+- Se realizaron los cambios en ReporteE.rpt
+	.- Se cambio el orden de presentacion de inventarios
+	.- Se cambió el tamaño del cuadro de inventarios
+	.- Se cambiaron "ToneladasProyectadas" por "Meta Toneladas"
+- En AmaproOracle.vbp
+	.- Se realizaron los cambios para que agregue los datos de toneladas a la tabla "ReporteEjecutivoVentasNUEVAS"

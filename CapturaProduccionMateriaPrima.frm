@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form CapturaProduccionMateriaPrima 
@@ -216,7 +216,6 @@ Begin VB.Form CapturaProduccionMateriaPrima
       TabPicture(1)   =   "CapturaProduccionMateriaPrima.frx":4C66
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "DbGridMateriaPrima"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Busqueda De Datos"
       TabPicture(2)   =   "CapturaProduccionMateriaPrima.frx":50B8
@@ -413,7 +412,7 @@ Begin VB.Form CapturaProduccionMateriaPrima
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   17039363
+         Format          =   62586883
          CurrentDate     =   37522
       End
       Begin MSComCtl2.DTPicker DTPFecIni 
@@ -426,7 +425,7 @@ Begin VB.Form CapturaProduccionMateriaPrima
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   17039363
+         Format          =   62586883
          CurrentDate     =   37522
       End
       Begin VB.CommandButton CmdBuscar 
@@ -1138,13 +1137,13 @@ End Sub
 
 Private Sub DBGridBusqueda_DblClick()
             If BFichaTecnica = True Then
-                TxtTexto.Item(0).Text = DBGridBusqueda.Columns(0).Text
+                TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0).Text
                 TxtTexto.Item(0).SetFocus
             ElseIf BLinea = True Then
-                TxtTexto.Item(2).Text = DBGridBusqueda.Columns(0).Text
+                TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0).Text
                 TxtTexto.Item(2).SetFocus
             ElseIf BMateriaPrima = True Then
-                TxtTexto.Item(4).Text = DBGridBusqueda.Columns(0).Text
+                TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0).Text
                 TxtTexto.Item(4).SetFocus
             End If
                 FrameBusqueda.Visible = False
@@ -1153,13 +1152,13 @@ End Sub
 Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
             If KeyAscii = 43 Then
                 If BFichaTecnica = True Then
-                    TxtTexto.Item(0).Text = DBGridBusqueda.Columns(0).Text
+                    TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0).Text
                     TxtTexto.Item(0).SetFocus
                 ElseIf BLinea = True Then
-                    TxtTexto.Item(2).Text = DBGridBusqueda.Columns(0).Text
+                    TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0).Text
                     TxtTexto.Item(2).SetFocus
                 ElseIf BMateriaPrima = True Then
-                    TxtTexto.Item(4).Text = DBGridBusqueda.Columns(0).Text
+                    TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0).Text
                     TxtTexto.Item(4).SetFocus
                 End If
                     FrameBusqueda.Visible = False
@@ -1294,8 +1293,8 @@ Private Sub TxtBusqueda_Change()
             End If
     End If
             
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -1378,8 +1377,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
         End If
         
         If (Index = 0 Or Index = 2 Or Index = 4) Then
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
             FrameBusqueda.Visible = True
             TxtBusqueda.SetFocus
         End If
@@ -1419,8 +1418,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 End If
                 
                 If (Index = 0 Or Index = 2 Or Index = 4) Then
-                    Set DBGridBusqueda.DataSource = RBusqueda
-                    DBGridBusqueda.Columns(1).Width = "4000"
+                    Set DbGridBusqueda.DataSource = RBusqueda
+                    DbGridBusqueda.Columns(1).Width = "4000"
                     FrameBusqueda.Visible = True
                     TxtBusqueda.SetFocus
                 End If

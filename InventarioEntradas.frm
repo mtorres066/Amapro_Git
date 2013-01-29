@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form InventarioEntradas 
@@ -28,9 +28,9 @@ Begin VB.Form InventarioEntradas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   8895
-      Left            =   0
+      Left            =   7920
       TabIndex        =   28
-      Top             =   0
+      Top             =   6240
       Visible         =   0   'False
       Width           =   11895
       Begin MSDataGridLib.DataGrid DbGridBusqueda 
@@ -2325,6 +2325,8 @@ Dim VTexto As String
 Dim BEditarEncabezado As Boolean
 Dim BEditarDetalle As Boolean
 
+Dim intRespuesta As Integer
+
 
 Sub Botones1()
     If Bandera = True Then
@@ -3330,9 +3332,14 @@ On Error Resume Next
 
 'REVISA SI EL USUARIO ELEGIÓ UNA OC MP
 If BGrabo = True Or BBorro = True Then
-    Pregunta_OC_MP
-    Exit Sub
 Else
+    'Dim intRespuesta As Integer
+    intRespuesta = MsgBox("¿Quieres ligar esta entrada a una Orden de Compra?", vbQuestion + vbYesNo, "Información importante")
+    If intRespuesta = 6 Then    'Contestó SI
+        Pregunta_OC_MP
+        'Exit Sub
+    Else
+    End If
     
 End If
 
@@ -4887,17 +4894,22 @@ On Error Resume Next
     
     'REVISA SI EL USUARIO ELEGIÓ UNA OC MP
     If VLinea = "77" Then  'Es MP
+        
         'EJECUTA PROCEDIMIENTO PARA AFECTAR LAS OC DE MP
-        If BanderaOCompraMP = True Then
-            
-        Else
-            MsgBox "Debe Elegir una Orden de Compra de MP a Afectar ", vbOKOnly + vbInformation, "Informacion"
-            dg_OCompra_MP.SetFocus
+        'Pregunta primero si dicha entrada ya tiene una orden de produccion
+        If TxtOrd.Text <> "" Then   'Ya tiene orden de Prod
             Exit Sub
+        Else
+            If BanderaOCompraMP = True Then
+                
+            Else
+                MsgBox "Debe Elegir una Orden de Compra de MP a Afectar ", vbOKOnly + vbInformation, "Informacion"
+                dg_OCompra_MP.SetFocus
+                Exit Sub
+            End If
         End If
         
    Else
-    
    End If
 
 End Sub

@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form PedidosProveedores 
    BackColor       =   &H0000C000&
@@ -1574,7 +1574,7 @@ On Error Resume Next
     Botones2
     Limpia_CamposDetalle
     'INABILITA EL GRID PARA QUE NO PUEDAN MOVERSE POR EL GRID
-    DbGridDetalle.Enabled = False
+    DBGridDetalle.Enabled = False
     'SE ASIGNA AL DOCUMENTO DE DETALLE EL DOCUMENTO DEL ENCABEZADO
     TxtDocDet.Text = VDocumento
     TxtCod.SetFocus
@@ -1652,7 +1652,7 @@ On Error Resume Next
                                                 End If
                                                 
                                                 Llena_CamposDetalle
-                                                Set DbGridDetalle.DataSource = RDetalle
+                                                Set DBGridDetalle.DataSource = RDetalle
                    
             End If
 End Sub
@@ -1811,7 +1811,7 @@ MousePointer = 11
                                     Call Abrir_Recordset(RDetalle, "Select D.Documento, D.Codigo, F.Descrip, D.CantidadPedido, D.CantidadEntregada, D.SaldoPorEntregar, D.Diaspedido, D.FechaParaEntregar, D.FechaEntregaTotal, D.DiasDeAtraso, D.Precio From EncabezadoPedidosProveedores E, DetallePedidosProveedores D, FichaTecnica F Where UPPER(E.Documento) = '" & UCase(TxtDoc.Text) & "' And UPPER(E.Documento) = UPPER(D.Documento) And UPPER(D.Codigo) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
 MousePointer = 0
 
 End Sub
@@ -1837,7 +1837,7 @@ Private Sub CmdBuscar_Click()
                                     Call Abrir_Recordset(RDetalle, "Select D.Documento, D.Codigo, F.Descrip, D.CantidadPedido, D.CantidadEntregada, D.SaldoPorEntregar, D.Diaspedido, D.FechaParaEntregar, D.FechaEntregaTotal, D.DiasDeAtraso, D.Precio From EncabezadoPedidosProveedores E, DetallePedidosProveedores D, FichaTecnica F Where UPPER(E.Documento) = '" & UCase(TxtDoc.Text) & "' And UPPER(E.Documento) = UPPER(D.Documento) And UPPER(D.Codigo) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
     End If
     
 End Sub
@@ -1850,14 +1850,14 @@ On Error Resume Next
     Botones1
     Llena_CamposEncabezado
     FrameDetalle.Visible = True
-    DbGridDetalle.Visible = True
+    DBGridDetalle.Visible = True
     
 End Sub
 
 Private Sub CmdCancelar2_Click()
 On Error Resume Next
     
-    DbGridDetalle.Enabled = True
+    DBGridDetalle.Enabled = True
     Bandera2 = False
     Botones2
     Llena_CamposDetalle
@@ -1880,7 +1880,7 @@ On Error Resume Next
     MskFec.SetFocus
     TxtUsu.Text = GUsuario
     FrameDetalle.Visible = False
-    DbGridDetalle.Visible = False
+    DBGridDetalle.Visible = False
 End Sub
 
 
@@ -1915,7 +1915,7 @@ On Error Resume Next
     
     'INABILITA EL GRID PARA QUE NO PUEDAN MOVERSE POR EL GRID
     VCodigo = TxtCod.Text
-    DbGridDetalle.Enabled = False
+    DBGridDetalle.Enabled = False
     BEditarDetalle = True
     Bandera2 = True
     Botones2
@@ -2077,7 +2077,7 @@ On Error Resume Next
     RDetalle.Requery
     RDetalle.MoveLast
     Llena_CamposDetalle
-    DbGridDetalle.Enabled = True
+    DBGridDetalle.Enabled = True
     CmdAgregar2.SetFocus
 End Sub
 
@@ -2090,7 +2090,7 @@ Private Sub CmdAgregar_Click()
     Botones1
     BEditarEncabezado = False
     FrameDetalle.Visible = False
-    DbGridDetalle.Visible = False
+    DBGridDetalle.Visible = False
     Limpia_CamposEncabezado
     TxtUsu.Text = GUsuario
     MskFec.Text = Date
@@ -2190,7 +2190,7 @@ On Error Resume Next
                                     Call Abrir_Recordset(RDetalle, "Select D.Documento, D.Codigo, F.Descrip, D.CantidadPedido, D.CantidadEntregada, D.SaldoPorEntregar, D.Diaspedido, D.FechaParaEntregar, D.FechaEntregaTotal, D.DiasDeAtraso, D.Precio From EncabezadoPedidosProveedores E, DetallePedidosProveedores D, FichaTecnica F Where UPPER(E.Documento) = '" & UCase(TxtDoc.Text) & "' And UPPER(E.Documento) = UPPER(D.Documento) And UPPER(D.Codigo) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
                         
     'ESCONDE LOS BOTONES DEL ENCABEZADO
     Bandera4 = False
@@ -2208,7 +2208,7 @@ On Error Resume Next
     CmdBotones2.Item(4).Visible = False
                 
     FrameDetalle.Visible = True
-    DbGridDetalle.Visible = True
+    DBGridDetalle.Visible = True
     FrameDetalle.Enabled = True
     FrameEncabezado.Enabled = False
     CmdAgregar2.SetFocus
@@ -2271,7 +2271,7 @@ End If
                                     Call Abrir_Recordset(RDetalle, "Select D.Documento, D.Codigo, F.Descrip, D.CantidadPedido, D.CantidadEntregada, D.SaldoPorEntregar, D.Diaspedido, D.FechaParaEntregar, D.FechaEntregaTotal, D.DiasDeAtraso, D.Precio From EncabezadoPedidosProveedores E, DetallePedidosProveedores D, FichaTecnica F Where UPPER(E.Documento) = '" & UCase(TxtDoc.Text) & "' And UPPER(E.Documento) = UPPER(D.Documento) And UPPER(D.Codigo) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
                 
     
 End Sub
@@ -2284,10 +2284,10 @@ End Sub
 
 Private Sub DBGridBusqueda_DblClick()
         If BMateriaPrima = True Then
-            TxtCod.Text = DBGridBusqueda.Columns(0)
+            TxtCod.Text = DbGridBusqueda.Columns(0)
             TxtCod.SetFocus
         ElseIf BProveedor = True Then
-            TxtCli.Text = DBGridBusqueda.Columns(0)
+            TxtCli.Text = DbGridBusqueda.Columns(0)
             TxtCli.SetFocus
         End If
             TxtBuscar.Text = ""
@@ -2301,10 +2301,10 @@ End Sub
 Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
         If KeyAscii = 43 Then
             If BMateriaPrima = True Then
-                TxtCod.Text = DBGridBusqueda.Columns(0)
+                TxtCod.Text = DbGridBusqueda.Columns(0)
                 TxtCod.SetFocus
             ElseIf BProveedor = True Then
-                TxtCli.Text = DBGridBusqueda.Columns(0)
+                TxtCli.Text = DbGridBusqueda.Columns(0)
                 TxtCli.SetFocus
             End If
             TxtBuscar.Text = ""
@@ -2347,7 +2347,7 @@ On Error Resume Next
                                     Call Abrir_Recordset(RDetalle, "Select D.Documento, D.Codigo, F.Descrip, D.CantidadPedido, D.CantidadEntregada, D.SaldoPorEntregar, D.Diaspedido, D.FechaParaEntregar, D.FechaEntregaTotal, D.DiasDeAtraso, D.Precio From EncabezadoPedidosProveedores E, DetallePedidosProveedores D, FichaTecnica F Where UPPER(E.Documento) = '" & UCase(TxtDoc.Text) & "' And UPPER(E.Documento) = UPPER(D.Documento) And UPPER(D.Codigo) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DbGridDetalle.DataSource = RDetalle
+                                Set DBGridDetalle.DataSource = RDetalle
                 
         
 End Sub
@@ -2553,8 +2553,8 @@ Private Sub Txtbuscar_Change()
             End If
         End If
             
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -2637,8 +2637,8 @@ Private Sub TxtCli_DblClick()
            'SELECCIONA TODO EL CATALOGO
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores Order by CodigoProveedor")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -2660,8 +2660,8 @@ Private Sub TxtCli_KeyPress(KeyAscii As Integer)
            'SELECCIONA TODO EL CATALOGO
            Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores Order by CodigoProveedor")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
     End If
 End Sub
 
@@ -2686,8 +2686,8 @@ Private Sub TxtCod_DblClick()
            'SELECCIONA TODO EL CATALOGO
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip from FichaTecnica Order by Esp_Tec")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
 End Sub
 Private Sub TxtCod_GotFocus()
         TxtCod.SelStart = 0
@@ -2708,8 +2708,8 @@ Private Sub TxtCod_KeyPress(KeyAscii As Integer)
            'SELECCIONA TODO EL CATALOGO
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip from FichaTecnica Order by Esp_Tec")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
         
         End If
 End Sub
