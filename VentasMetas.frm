@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "Msmask32.ocx"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form VentasMetas 
@@ -30,14 +30,14 @@ Begin VB.Form VentasMetas
       EndProperty
       Height          =   6015
       Left            =   120
-      TabIndex        =   18
+      TabIndex        =   19
       Top             =   120
       Visible         =   0   'False
       Width           =   8412
       Begin MSDataGridLib.DataGrid DBGridBusqueda 
          Height          =   4815
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   23
          Top             =   1080
          Width           =   8175
          _ExtentX        =   14420
@@ -107,7 +107,7 @@ Begin VB.Form VentasMetas
          Left            =   7440
          Picture         =   "VentasMetas.frx":030A
          Style           =   1  'Graphical
-         TabIndex        =   23
+         TabIndex        =   24
          ToolTipText     =   "Sale De Busqueda"
          Top             =   240
          Width           =   855
@@ -116,7 +116,7 @@ Begin VB.Form VentasMetas
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   22
          ToolTipText     =   "digite los datos a buscar"
          Top             =   720
          Width           =   7215
@@ -127,7 +127,7 @@ Begin VB.Form VentasMetas
          Height          =   195
          Index           =   1
          Left            =   1680
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   360
          Width           =   1335
       End
@@ -137,7 +137,7 @@ Begin VB.Form VentasMetas
          Height          =   195
          Index           =   0
          Left            =   120
-         TabIndex        =   19
+         TabIndex        =   20
          Top             =   360
          Value           =   -1  'True
          Width           =   1455
@@ -151,7 +151,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":237C
       Picture         =   "VentasMetas.frx":27BE
       Style           =   1  'Graphical
-      TabIndex        =   28
+      TabIndex        =   29
       ToolTipText     =   "Ultimo Registro"
       Top             =   5400
       Width           =   375
@@ -164,7 +164,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":2CF0
       Picture         =   "VentasMetas.frx":3132
       Style           =   1  'Graphical
-      TabIndex        =   27
+      TabIndex        =   28
       ToolTipText     =   "Siguiente Registro"
       Top             =   5400
       Width           =   375
@@ -177,7 +177,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":3664
       Picture         =   "VentasMetas.frx":3AA6
       Style           =   1  'Graphical
-      TabIndex        =   26
+      TabIndex        =   27
       ToolTipText     =   "Registro Anterior"
       Top             =   5400
       Width           =   375
@@ -190,7 +190,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":3FD8
       Picture         =   "VentasMetas.frx":441A
       Style           =   1  'Graphical
-      TabIndex        =   25
+      TabIndex        =   26
       ToolTipText     =   "Primer Registro"
       Top             =   5400
       Width           =   375
@@ -198,7 +198,7 @@ Begin VB.Form VentasMetas
    Begin TabDlg.SSTab TabBodegas 
       Height          =   5055
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   12
       Top             =   120
       Width           =   8415
       _ExtentX        =   14843
@@ -225,7 +225,7 @@ Begin VB.Form VentasMetas
       Begin MSDataGridLib.DataGrid DataGrid1 
          Height          =   4215
          Left            =   -74880
-         TabIndex        =   24
+         TabIndex        =   25
          Top             =   720
          Width           =   8175
          _ExtentX        =   14420
@@ -304,20 +304,20 @@ Begin VB.Form VentasMetas
          ForeColor       =   &H000000FF&
          Height          =   4215
          Left            =   -74880
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   720
          Width           =   8085
          Begin MSComCtl2.DTPicker DtpFecIni 
             Height          =   255
             Left            =   6120
-            TabIndex        =   33
+            TabIndex        =   34
             Top             =   1200
             Width           =   1455
             _ExtentX        =   2566
             _ExtentY        =   450
             _Version        =   393216
             CustomFormat    =   "dd/MM/yyyy"
-            Format          =   122814467
+            Format          =   71565315
             CurrentDate     =   38385
          End
          Begin VB.OptionButton OptOpcion 
@@ -325,7 +325,7 @@ Begin VB.Form VentasMetas
             Height          =   195
             Index           =   1
             Left            =   360
-            TabIndex        =   32
+            TabIndex        =   33
             Top             =   720
             Visible         =   0   'False
             Width           =   2055
@@ -335,7 +335,7 @@ Begin VB.Form VentasMetas
             Height          =   195
             Index           =   0
             Left            =   360
-            TabIndex        =   31
+            TabIndex        =   32
             Top             =   360
             Value           =   -1  'True
             Visible         =   0   'False
@@ -348,7 +348,7 @@ Begin VB.Form VentasMetas
             Left            =   6120
             Picture         =   "VentasMetas.frx":550A
             Style           =   1  'Graphical
-            TabIndex        =   36
+            TabIndex        =   37
             Top             =   2520
             Width           =   1812
          End
@@ -359,7 +359,7 @@ Begin VB.Form VentasMetas
             Left            =   6120
             Picture         =   "VentasMetas.frx":7204
             Style           =   1  'Graphical
-            TabIndex        =   37
+            TabIndex        =   38
             Top             =   3360
             Width           =   1812
          End
@@ -368,7 +368,7 @@ Begin VB.Form VentasMetas
             BackColor       =   &H80000014&
             Height          =   285
             Left            =   6120
-            TabIndex        =   35
+            TabIndex        =   36
             ToolTipText     =   " "
             Top             =   1920
             Visible         =   0   'False
@@ -377,14 +377,14 @@ Begin VB.Form VentasMetas
          Begin MSComCtl2.DTPicker DTPFecFin 
             Height          =   255
             Left            =   6120
-            TabIndex        =   34
+            TabIndex        =   35
             Top             =   1560
             Width           =   1455
             _ExtentX        =   2566
             _ExtentY        =   450
             _Version        =   393216
             CustomFormat    =   "dd/MM/yyyy"
-            Format          =   122814467
+            Format          =   71565315
             CurrentDate     =   38385
          End
          Begin VB.Label Label4 
@@ -401,7 +401,7 @@ Begin VB.Form VentasMetas
             EndProperty
             Height          =   255
             Left            =   4800
-            TabIndex        =   39
+            TabIndex        =   40
             Top             =   1560
             Width           =   1215
          End
@@ -419,7 +419,7 @@ Begin VB.Form VentasMetas
             EndProperty
             Height          =   255
             Left            =   4800
-            TabIndex        =   38
+            TabIndex        =   39
             Top             =   1200
             Width           =   1215
          End
@@ -437,7 +437,7 @@ Begin VB.Form VentasMetas
             EndProperty
             Height          =   255
             Left            =   3960
-            TabIndex        =   29
+            TabIndex        =   30
             Top             =   1920
             Visible         =   0   'False
             Width           =   2055
@@ -455,11 +455,24 @@ Begin VB.Form VentasMetas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2655
+         Height          =   3135
          Left            =   120
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   1320
          Width           =   8115
+         Begin MSMask.MaskEdBox MskMetTon 
+            Height          =   255
+            Left            =   1080
+            TabIndex        =   5
+            Top             =   2160
+            Width           =   1695
+            _ExtentX        =   2990
+            _ExtentY        =   450
+            _Version        =   393216
+            Appearance      =   0
+            Format          =   "#,###,##0.00"
+            PromptChar      =   "_"
+         End
          Begin VB.TextBox TxtCli 
             Appearance      =   0  'Flat
             Height          =   288
@@ -479,7 +492,7 @@ Begin VB.Form VentasMetas
             _ExtentY        =   450
             _Version        =   393216
             CustomFormat    =   "MM/yyyy"
-            Format          =   122814467
+            Format          =   71565315
             CurrentDate     =   40368
          End
          Begin VB.TextBox TxtTipFicTec 
@@ -499,9 +512,9 @@ Begin VB.Form VentasMetas
             Left            =   1080
             Locked          =   -1  'True
             MaxLength       =   10
-            TabIndex        =   5
+            TabIndex        =   6
             TabStop         =   0   'False
-            Top             =   2160
+            Top             =   2520
             Width           =   1692
          End
          Begin MSMask.MaskEdBox MskMetDol 
@@ -531,15 +544,25 @@ Begin VB.Form VentasMetas
             PromptChar      =   "_"
          End
          Begin VB.Label Label1 
+            Caption         =   "Toneladas"
+            Height          =   255
+            Index           =   4
+            Left            =   120
+            TabIndex        =   44
+            Top             =   2160
+            Width           =   855
+         End
+         Begin VB.Label Label1 
             Caption         =   "Cliente"
             Height          =   255
             Index           =   3
             Left            =   120
-            TabIndex        =   42
+            TabIndex        =   43
             Top             =   1080
             Width           =   615
          End
          Begin VB.Label LblCli 
+            Appearance      =   0  'Flat
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "MS Sans Serif"
@@ -550,9 +573,10 @@ Begin VB.Form VentasMetas
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H80000008&
             Height          =   255
             Left            =   2880
-            TabIndex        =   41
+            TabIndex        =   42
             Top             =   1080
             Width           =   5055
          End
@@ -561,7 +585,7 @@ Begin VB.Form VentasMetas
             Height          =   255
             Index           =   2
             Left            =   120
-            TabIndex        =   40
+            TabIndex        =   41
             Top             =   1800
             Width           =   615
          End
@@ -570,11 +594,12 @@ Begin VB.Form VentasMetas
             Height          =   255
             Index           =   1
             Left            =   120
-            TabIndex        =   30
+            TabIndex        =   31
             Top             =   1440
             Width           =   735
          End
          Begin VB.Label LblEmp 
+            Appearance      =   0  'Flat
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "MS Sans Serif"
@@ -585,9 +610,10 @@ Begin VB.Form VentasMetas
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H80000008&
             Height          =   255
             Left            =   2880
-            TabIndex        =   17
+            TabIndex        =   18
             Top             =   720
             Width           =   5055
          End
@@ -597,8 +623,8 @@ Begin VB.Form VentasMetas
             Height          =   195
             Index           =   4
             Left            =   120
-            TabIndex        =   16
-            Top             =   2160
+            TabIndex        =   17
+            Top             =   2520
             Width           =   540
          End
          Begin VB.Label Label1 
@@ -606,7 +632,7 @@ Begin VB.Form VentasMetas
             Height          =   375
             Index           =   0
             Left            =   120
-            TabIndex        =   14
+            TabIndex        =   15
             Top             =   600
             Width           =   855
          End
@@ -615,7 +641,7 @@ Begin VB.Form VentasMetas
             Height          =   255
             Index           =   0
             Left            =   120
-            TabIndex        =   13
+            TabIndex        =   14
             Top             =   360
             Width           =   975
          End
@@ -628,7 +654,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":750E
       Picture         =   "VentasMetas.frx":7950
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   11
       Top             =   5280
       Width           =   1065
    End
@@ -639,7 +665,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":7E6B
       Picture         =   "VentasMetas.frx":82AD
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   10
       Top             =   5280
       Width           =   1200
    End
@@ -651,7 +677,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":8875
       Picture         =   "VentasMetas.frx":8CB7
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   9
       Top             =   5280
       Width           =   1200
    End
@@ -663,7 +689,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":91EE
       Picture         =   "VentasMetas.frx":9630
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   8
       Top             =   5280
       Width           =   1200
    End
@@ -674,7 +700,7 @@ Begin VB.Form VentasMetas
       MouseIcon       =   "VentasMetas.frx":9B8C
       Picture         =   "VentasMetas.frx":9FCE
       Style           =   1  'Graphical
-      TabIndex        =   6
+      TabIndex        =   7
       Top             =   5280
       Width           =   1200
    End
@@ -764,9 +790,9 @@ End Sub
 
 Private Sub CmdBorrar_Click()
 On Error Resume Next
-            'mensaje = MsgBox("¿Está seguro de Borrar el registro?", vbOKCancel + vbCritical + vbDefaultButton2, "Eliminación de Registros")
+            mensaje = MsgBox("¿Está seguro de Borrar el registro?", vbOKCancel + vbCritical + vbDefaultButton2, "Eliminación de Registros")
         
-             '       If mensaje = vbOK Then
+                    If mensaje = vbOK Then
                         'BORRA EL REGISTRO
                         RInventario.Delete
                         
@@ -787,17 +813,12 @@ On Error Resume Next
                         End If
                         
                         'VUELVE A LLENAR EL RECORDSET DE SU ESTADO ORIGINAL
-                        'RInventario.Requery
+                        RInventario.Requery
                         'MUEVE AL SIGUIENTE REGISTRO
-                        RInventario.MoveNext
-                        'SI HAY ERRORES
-                        If Err <> 0 Then
-                            MsgBox "Error " & Err.Number & " " & Err.Description, vbOKOnly + vbInformation, "Error"
-                            Err.Clear
-                        End If
+                        RInventario.MoveLast
                         
                         Llena_Campos
-              '      End If
+                    End If
 
 End Sub
 
@@ -919,7 +940,8 @@ On Error Resume Next
                             VTexto = VTexto & TxtTipFicTec.Text & "', '" ' TIPO FICHA TECNICA
                             VTexto = VTexto & TxtCli.Text & "', " ' Clientes
                             VTexto = VTexto & MskMetDol.Text & ", " 'DOLARES
-                            VTexto = VTexto & MskMetCan.Text & ", '" 'CANTIDAD
+                            VTexto = VTexto & MskMetCan.Text & ", " 'CANTIDAD
+                            VTexto = VTexto & MskMetTon.Text & ", '"    'TONELADAS  ---------------------------------
                             VTexto = VTexto & GUsuario & "'" 'USUARIO
                             
                             Conexion.Execute "Insert Into VentasMetasMensuales Values(" & VTexto & ")"
@@ -1020,7 +1042,9 @@ End Sub
 
 Private Sub Form_Load()
         Set RInventario = New ADODB.Recordset
-        Call Abrir_Recordset(RInventario, "Select * From VentasMetasMensuales order by fecha desc")
+        Call Abrir_Recordset(RInventario, "Select * From VentasMetasMensuales ORDER BY Fecha, TipoFichaTecnica")
+        RInventario.MoveLast
+        
         Set DataGrid1.DataSource = RInventario
         Llena_Campos
     
@@ -1030,8 +1054,11 @@ Private Sub Form_Load()
                 DataGrid1.AllowUpdate = False
         End If
         
-        DtpFecIni.Value = Date
-        DTPFecFin.Value = Date
+'        DtpFecIni.Value = Date
+'        DTPFecFin.Value = Date
+        
+        DtpFecIni.Value = RInventario!fecha
+        DTPFecFin.Value = RInventario!fecha
 End Sub
 
 
@@ -1060,7 +1087,7 @@ Private Sub MskMetCan_GotFocus()
 End Sub
 
 Private Sub MskMetCan_KeyPress(KeyAscii As Integer)
-If KeyAscii = 13 Then
+        If KeyAscii = 13 Then
             SendKeys "{tab}"
         End If
 End Sub
@@ -1068,11 +1095,21 @@ End Sub
 Private Sub MskMetDol_GotFocus()
         MskMetDol.SelStart = 0
         MskMetDol.SelLength = Len(MskMetDol.Text)
-        
 End Sub
 
 Private Sub MskMetDol_KeyPress(KeyAscii As Integer)
-If KeyAscii = 13 Then
+        If KeyAscii = 13 Then
+            SendKeys "{tab}"
+        End If
+End Sub
+
+Private Sub MskMetTon_GotFocus()
+        MskMetTon.SelStart = 0
+        MskMetTon.SelLength = Len(MskMetTon.Text)
+End Sub
+
+Private Sub MskMetTon_KeyPress(KeyAscii As Integer)
+        If KeyAscii = 13 Then
             SendKeys "{tab}"
         End If
 End Sub
@@ -1146,6 +1183,7 @@ On Error Resume Next
         MskMetDol.Text = RInventario!MetaDolares
         MskMetCan.Text = RInventario!MetaCantidad
         TxtTexto.Item(6).Text = RInventario!Usuario
+        MskMetTon.Text = RInventario!MetaToneladas
             
         If Err <> 0 Then
         End If
@@ -1158,7 +1196,7 @@ Public Sub Limpia_Campos()
         MskMetDol.Text = "0"
         MskMetCan.Text = "0"
         TxtTexto.Item(6).Text = ""
-        
+        MskMetTon.Text = "0"
         
 End Sub
 

@@ -1,3 +1,9 @@
+19/03/2013.
+- Se actualizó Form "FichaTecnicaTipos" para que permita capturar nuevos Tipos de Ficha Tecnica (La Tabla "FichaTecnicaTipos" se le habia agregado el campo "TipoOrden"
+	.- El campo "TipoOrden" en la Tabla "FichaTecnicaTipos" es para que el Rep Ejec tenga manera de ordenar el Inventario por "Tipo de Producto".
+- Se actualizó Form "VentasMetas" para que permita capturar las Metas de Ventas con el campo "MetaToneladas"
+
+
 23/01/2013
 Cambios reflejados en GitHub y Google Drive. (Nunca trabajar directamente en carpeta GitHub)
 - Se logró compilar el Amaprofepsa.exe

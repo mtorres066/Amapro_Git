@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form FichaTecnicaTipos 
    BackColor       =   &H000000FF&
@@ -24,7 +24,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":0442
       Picture         =   "FichaTecnicaTipos.frx":0884
       Style           =   1  'Graphical
-      TabIndex        =   25
+      TabIndex        =   26
       ToolTipText     =   "Primer Registro"
       Top             =   4440
       Width           =   375
@@ -37,7 +37,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":0DB6
       Picture         =   "FichaTecnicaTipos.frx":11F8
       Style           =   1  'Graphical
-      TabIndex        =   24
+      TabIndex        =   25
       ToolTipText     =   "Registro Anterior"
       Top             =   4440
       Width           =   375
@@ -50,7 +50,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":172A
       Picture         =   "FichaTecnicaTipos.frx":1B6C
       Style           =   1  'Graphical
-      TabIndex        =   23
+      TabIndex        =   24
       ToolTipText     =   "Siguiente Registro"
       Top             =   4440
       Width           =   375
@@ -63,7 +63,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":209E
       Picture         =   "FichaTecnicaTipos.frx":24E0
       Style           =   1  'Graphical
-      TabIndex        =   22
+      TabIndex        =   23
       ToolTipText     =   "Ultimo Registro"
       Top             =   4440
       Width           =   375
@@ -71,7 +71,7 @@ Begin VB.Form FichaTecnicaTipos
    Begin TabDlg.SSTab TabPuestos 
       Height          =   4215
       Left            =   0
-      TabIndex        =   11
+      TabIndex        =   12
       Top             =   0
       Width           =   8415
       _ExtentX        =   14843
@@ -88,6 +88,7 @@ Begin VB.Form FichaTecnicaTipos
       TabPicture(1)   =   "FichaTecnicaTipos.frx":2D2C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "DataGrid1"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Busqueda De Datos"
       TabPicture(2)   =   "FichaTecnicaTipos.frx":317E
@@ -101,7 +102,7 @@ Begin VB.Form FichaTecnicaTipos
       Begin MSDataGridLib.DataGrid DataGrid1 
          Height          =   3375
          Left            =   -74880
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   720
          Width           =   8175
          _ExtentX        =   14420
@@ -188,7 +189,7 @@ Begin VB.Form FichaTecnicaTipos
          BackColor       =   &H80000014&
          Height          =   285
          Left            =   -68760
-         TabIndex        =   17
+         TabIndex        =   18
          ToolTipText     =   "Digite los datos para hacer la busqueda"
          Top             =   1800
          Width           =   2085
@@ -200,7 +201,7 @@ Begin VB.Form FichaTecnicaTipos
          Left            =   -68760
          Picture         =   "FichaTecnicaTipos.frx":35D0
          Style           =   1  'Graphical
-         TabIndex        =   21
+         TabIndex        =   22
          Top             =   3240
          Width           =   2055
       End
@@ -211,7 +212,7 @@ Begin VB.Form FichaTecnicaTipos
          Left            =   -68760
          Picture         =   "FichaTecnicaTipos.frx":38DA
          Style           =   1  'Graphical
-         TabIndex        =   19
+         TabIndex        =   20
          Top             =   2280
          Width           =   2055
       End
@@ -229,14 +230,14 @@ Begin VB.Form FichaTecnicaTipos
          ForeColor       =   &H000000FF&
          Height          =   740
          Left            =   -74880
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   960
          Width           =   2805
          Begin VB.OptionButton OptCodigo 
             Caption         =   "Codigo"
             Height          =   225
             Left            =   120
-            TabIndex        =   9
+            TabIndex        =   10
             ToolTipText     =   " "
             Top             =   300
             Value           =   -1  'True
@@ -246,7 +247,7 @@ Begin VB.Form FichaTecnicaTipos
             Caption         =   "Descripcion"
             Height          =   195
             Left            =   1080
-            TabIndex        =   10
+            TabIndex        =   11
             ToolTipText     =   " "
             Top             =   300
             Width           =   1575
@@ -264,22 +265,34 @@ Begin VB.Form FichaTecnicaTipos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1575
+         Height          =   2295
          Left            =   120
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   1560
          Width           =   8175
+         Begin VB.TextBox Txttexto 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            Height          =   285
+            Index           =   3
+            Left            =   2040
+            MaxLength       =   10
+            TabIndex        =   2
+            ToolTipText     =   "signo '+' o doble click para ayuda"
+            Top             =   1080
+            Width           =   1935
+         End
          Begin VB.TextBox Txttexto 
             Appearance      =   0  'Flat
             BackColor       =   &H00C0C0C0&
             Height          =   285
             Index           =   2
-            Left            =   1200
+            Left            =   2040
             Locked          =   -1  'True
             MaxLength       =   20
-            TabIndex        =   2
+            TabIndex        =   3
             TabStop         =   0   'False
-            Top             =   1080
+            Top             =   1440
             Width           =   1935
          End
          Begin VB.TextBox Txttexto 
@@ -298,12 +311,22 @@ Begin VB.Form FichaTecnicaTipos
             BackColor       =   &H00FFFFFF&
             Height          =   285
             Index           =   0
-            Left            =   1200
+            Left            =   2040
             MaxLength       =   10
             TabIndex        =   0
             ToolTipText     =   "signo '+' o doble click para ayuda"
             Top             =   360
             Width           =   1935
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Cod. Orden en Rep. Ejec."
+            Height          =   195
+            Index           =   1
+            Left            =   120
+            TabIndex        =   27
+            Top             =   1080
+            Width           =   1830
          End
          Begin VB.Label Label2 
             AutoSize        =   -1  'True
@@ -311,18 +334,19 @@ Begin VB.Form FichaTecnicaTipos
             Height          =   195
             Index           =   1
             Left            =   120
-            TabIndex        =   18
-            Top             =   1080
+            TabIndex        =   19
+            Top             =   1440
             Width           =   540
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
-            Caption         =   "Codigo"
+            Caption         =   "Codigo Tipo F. Tecnica"
             Height          =   195
+            Index           =   0
             Left            =   120
-            TabIndex        =   14
+            TabIndex        =   15
             Top             =   360
-            Width           =   495
+            Width           =   1665
          End
          Begin VB.Label Label2 
             AutoSize        =   -1  'True
@@ -330,7 +354,7 @@ Begin VB.Form FichaTecnicaTipos
             Height          =   195
             Index           =   0
             Left            =   120
-            TabIndex        =   13
+            TabIndex        =   14
             Top             =   720
             Width           =   840
          End
@@ -349,7 +373,7 @@ Begin VB.Form FichaTecnicaTipos
          EndProperty
          Height          =   255
          Left            =   -70800
-         TabIndex        =   16
+         TabIndex        =   17
          Top             =   1800
          Width           =   1935
       End
@@ -362,7 +386,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":3D1C
       Picture         =   "FichaTecnicaTipos.frx":415E
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   9
       Top             =   4320
       Width           =   1000
    End
@@ -374,7 +398,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":61D0
       Picture         =   "FichaTecnicaTipos.frx":6612
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   8
       Top             =   4320
       Width           =   1000
    End
@@ -387,7 +411,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":6B44
       Picture         =   "FichaTecnicaTipos.frx":6F86
       Style           =   1  'Graphical
-      TabIndex        =   6
+      TabIndex        =   7
       Top             =   4320
       Width           =   1000
    End
@@ -400,7 +424,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":74B8
       Picture         =   "FichaTecnicaTipos.frx":78FA
       Style           =   1  'Graphical
-      TabIndex        =   5
+      TabIndex        =   6
       Top             =   4320
       Width           =   1000
    End
@@ -412,7 +436,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":7E2C
       Picture         =   "FichaTecnicaTipos.frx":826E
       Style           =   1  'Graphical
-      TabIndex        =   4
+      TabIndex        =   5
       Top             =   4320
       Width           =   1000
    End
@@ -424,7 +448,7 @@ Begin VB.Form FichaTecnicaTipos
       MouseIcon       =   "FichaTecnicaTipos.frx":87A0
       Picture         =   "FichaTecnicaTipos.frx":8BE2
       Style           =   1  'Graphical
-      TabIndex        =   3
+      TabIndex        =   4
       Top             =   4320
       Width           =   1000
    End
@@ -496,24 +520,35 @@ Private Sub CmdBotones_Click(Index As Integer)
                     Bandera = True
                     botones
                     Limpia_Campos
-                    TxtTexto.Item(0).Enabled = True
+                    TxtTexto.Item(0).Enabled = True     'CODIGO TIPO F. TEC.
                     TxtTexto.Item(0).SetFocus
-                    TxtTexto.Item(2).Text = GUsuario
+                    TxtTexto.Item(2).Text = GUsuario    'USUARIO
+                    TxtTexto.Item(3).Enabled = True     'CODIGO ORDEN EN REP EJEC
                     BEditar = False
             'EDITAR
             ElseIf Index = 1 Then
                     Bandera = True
                     botones
-                    TxtTexto.Item(0).Enabled = False
-                    TxtTexto.Item(1).SetFocus
-                    TxtTexto.Item(2).Text = GUsuario
+                    TxtTexto.Item(0).Enabled = False        'CODIGO TIPO F. TEC.
+                    TxtTexto.Item(1).SetFocus               'DESC TIPO F. TEC.
+                    TxtTexto.Item(2).Text = GUsuario        'USUARIO
+                    TxtTexto.Item(3).Enabled = True          'CODIGO ORDEN EN REP EJEC
                     BEditar = True
             'GRABAR
             ElseIf Index = 2 Then
                     If BEditar = False Then 'ESTA AGREGANDO UN REGISTRO
-                         Conexion.Execute "Insert Into FichaTecnicaTipos Values('" & TxtTexto.Item(0).Text & "', '" & TxtTexto.Item(1).Text & "', '" & TxtTexto.Item(2).Text & "')"
+                         Conexion.Execute "Insert Into FichaTecnicaTipos " & _
+                                            "Values" & _
+                                            "('" & TxtTexto.Item(0).Text & "', " & _
+                                            "'" & TxtTexto.Item(1).Text & "', " & _
+                                            "'" & TxtTexto.Item(2).Text & "', " & _
+                                            "'" & TxtTexto.Item(3).Text & "')"          'CAMBIO REALIZADO PARA COD ORDEN REP EJEC
                     Else 'ESTA EDITANDO UN REGISTRO
-                         Conexion.Execute "UPDATE FichaTecnicaTipos SET Descripcion = '" & TxtTexto.Item(1).Text & "', Usuario = '" & TxtTexto.Item(2).Text & "' Where CodigoTipo = '" & TxtTexto.Item(0).Text & "'"
+                         Conexion.Execute "UPDATE FichaTecnicaTipos " & _
+                                            "SET Descripcion = '" & TxtTexto.Item(1).Text & "', " & _
+                                            "Usuario = '" & TxtTexto.Item(2).Text & "', " & _
+                                            "TipoOrden = '" & TxtTexto.Item(3).Text & "' " & _
+                                            "Where CodigoTipo = '" & TxtTexto.Item(0).Text & "'"
                     End If
                     
                     'SI SE DUPLICA LA LLAVE
@@ -727,6 +762,7 @@ On Error Resume Next
         TxtTexto.Item(0).Text = RDocumentos!CodigoTipo
         TxtTexto.Item(1).Text = RDocumentos!Descripcion
         TxtTexto.Item(2).Text = RDocumentos!Usuario
+        TxtTexto.Item(3).Text = RDocumentos!TipoOrden
         If Err <> 0 Then
         End If
 End Sub
@@ -735,4 +771,5 @@ Public Sub Limpia_Campos()
         TxtTexto.Item(0).Text = ""
         TxtTexto.Item(1).Text = ""
         TxtTexto.Item(2).Text = ""
+        TxtTexto.Item(3).Text = ""
 End Sub
