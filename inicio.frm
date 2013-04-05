@@ -130,7 +130,7 @@ Begin VB.Form Inicio
    Begin VB.Label Label3 
       Alignment       =   2  'Center
       BackColor       =   &H80000003&
-      Caption         =   "Version 23/01/2013 11:36"
+      Caption         =   "Version 04/04/2013 18:57"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
