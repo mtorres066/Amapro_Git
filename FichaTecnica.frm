@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form FichaTecnica 
    BackColor       =   &H000000FF&
@@ -275,7 +275,6 @@ Begin VB.Form FichaTecnica
       TabPicture(1)   =   "FichaTecnica.frx":82BC
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "DbGridFichaTecnica"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Seleccion O Busquedad De Datos"
       TabPicture(2)   =   "FichaTecnica.frx":870E
@@ -1137,7 +1136,7 @@ Begin VB.Form FichaTecnica
             EndProperty
             Height          =   285
             Left            =   1560
-            MaxLength       =   50
+            MaxLength       =   100
             TabIndex        =   3
             Top             =   720
             Width           =   9975
