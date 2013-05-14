@@ -1,3 +1,15 @@
+14/05/2013
+- Se arregló el que mostrara completo la ventana de catalogo de "Tipo de Docomunto" (Salía a la mitad la ventana del catalogo)
+
+
+04/04/2013
+- Se modif RPT:
+	.- Boleta de iD (identificacion.rpt) para que incluya la desc del producto con mas espacio
+	.- Cedula de MP (cedulamateriaprima.rpt) lo mismo
+- Se modifico el FORM "Ficha TEcnica" para que permita la captura en pantalla de mas caracteres en la desc
+- Se modif el tamaño del campo de la bd en tabla "ficha tecnica" para que permita mas de 100 caracteres.
+
+
 19/03/2013.
 - Se actualizó Form "FichaTecnicaTipos" para que permita capturar nuevos Tipos de Ficha Tecnica (La Tabla "FichaTecnicaTipos" se le habia agregado el campo "TipoOrden"
 	.- El campo "TipoOrden" en la Tabla "FichaTecnicaTipos" es para que el Rep Ejec tenga manera de ordenar el Inventario por "Tipo de Producto".

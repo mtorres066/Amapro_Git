@@ -28,9 +28,9 @@ Begin VB.Form InventarioEntradas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   8895
-      Left            =   7920
+      Left            =   0
       TabIndex        =   28
-      Top             =   6240
+      Top             =   0
       Visible         =   0   'False
       Width           =   11895
       Begin MSDataGridLib.DataGrid DbGridBusqueda 
@@ -2450,7 +2450,7 @@ Private Sub CmdAgregar2_Click()
     Limpia_CamposDetalle
     
     'INABILITA EL GRID PARA QUE NO PUEDAN MOVERSE POR EL GRID
-    DBGridDetalle.Enabled = False
+    DbGridDetalle.Enabled = False
     
     BEditarDetalle = False
     TxtDocDet.Text = VDocumento
@@ -2539,7 +2539,7 @@ On Error Resume Next
                                      Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng.Text & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                  End If
                                         Llena_CamposDetalle
-                                        Set DBGridDetalle.DataSource = RDetalle
+                                        Set DbGridDetalle.DataSource = RDetalle
 
                     
                 MousePointer = 0
@@ -2649,7 +2649,7 @@ MousePointer = 11
                 End If
                 
                 Llena_CamposDetalle
-                Set DBGridDetalle.DataSource = RDetalle
+                Set DbGridDetalle.DataSource = RDetalle
     
 MousePointer = 0
 
@@ -2681,7 +2681,7 @@ On Error Resume Next
                                      Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng.Text & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                 End If
                                 Llena_CamposDetalle
-                                Set DBGridDetalle.DataSource = RDetalle
+                                Set DbGridDetalle.DataSource = RDetalle
     End If
     
     
@@ -2694,14 +2694,14 @@ On Error Resume Next
     Botones1
     Llena_CamposEncabezado
     FrameDetalle.Visible = True
-    DBGridDetalle.Visible = True
+    DbGridDetalle.Visible = True
     
 End Sub
 
 Private Sub CmdCancelar2_Click()
 On Error Resume Next
     
-    DBGridDetalle.Enabled = True
+    DbGridDetalle.Enabled = True
     Bandera2 = False
     Botones2
     Llena_CamposDetalle
@@ -2741,7 +2741,7 @@ On Error Resume Next
     Botones1
     MskFec.SetFocus
     FrameDetalle.Visible = False
-    DBGridDetalle.Visible = False
+    DbGridDetalle.Visible = False
     TxtReq.Text = GUsuario
         
     
@@ -2947,7 +2947,7 @@ On Error Resume Next
                         RDetalle.Requery
                         RDetalle.MoveLast
                         Llena_CamposDetalle
-                        DBGridDetalle.Enabled = True
+                        DbGridDetalle.Enabled = True
                         CmdAgregar2.SetFocus
                         LblDes.Caption = ""
     
@@ -2962,7 +2962,7 @@ On Error Resume Next
     Botones1
     BEditarEncabezado = False
     FrameDetalle.Visible = False
-    DBGridDetalle.Visible = False
+    DbGridDetalle.Visible = False
     Limpia_CamposEncabezado
     'ASIGNA EL USUARIO
     TxtReq.Text = GUsuario
@@ -3240,7 +3240,7 @@ MousePointer = 11
                                                   Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & VDocumento & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
                                               End If
                                                   Llena_CamposDetalle
-                                                  Set DBGridDetalle.DataSource = RDetalle
+                                                  Set DbGridDetalle.DataSource = RDetalle
     
             
             
@@ -3250,11 +3250,11 @@ MousePointer = 11
     FrameDetalle.Enabled = True
     FrameEncabezado.Enabled = False
     'VISUALIZA EL GRID DE DETALEE
-    DBGridDetalle.Visible = True
+    DbGridDetalle.Visible = True
     
     'HABILITA LAS COLUMNAS PARA PODER MODIFICARLAS PERO SOLO LA UBICACION
-    DBGridDetalle.AllowUpdate = True
-    DBGridDetalle.AllowDelete = True
+    DbGridDetalle.AllowUpdate = True
+    DbGridDetalle.AllowDelete = True
         
     'VISUALIZA LOS BOTONES DEL DETALLE
     Bandera3 = True
@@ -3359,8 +3359,8 @@ End If
     FrameEncabezado.Enabled = True
     
     'DESHABILITA LAS COLUMNAS PARA PODER MODIFICARLAS PERO SOLO LA UBICACION
-    DBGridDetalle.AllowUpdate = True
-    DBGridDetalle.AllowDelete = True
+    DbGridDetalle.AllowUpdate = True
+    DbGridDetalle.AllowDelete = True
     
     CmdBotones2.Item(1).Visible = True
     CmdBotones2.Item(2).Visible = True
@@ -3426,35 +3426,35 @@ End Sub
 Private Sub DBGridBusqueda_DblClick()
     'BODEGA
     If BBodega = True Then
-        TxtBodega.Text = DbGridBusqueda.Columns(0)
+        TxtBodega.Text = DBGridBusqueda.Columns(0)
         TxtBodega.SetFocus
     'BODEGA DETALLE
     ElseIf BBodegaDetalle = True Then
-        TxtBod.Text = DbGridBusqueda.Columns(0)
+        TxtBod.Text = DBGridBusqueda.Columns(0)
         TxtBod.SetFocus
     'PRODUCTO TERMINADO
     ElseIf BProducto = True Then
-        TxtCodPro.Text = DbGridBusqueda.Columns(0)
+        TxtCodPro.Text = DBGridBusqueda.Columns(0)
         TxtCodPro.SetFocus
     'LINEAS
     ElseIf BLineas = True Then
-        TxtLin.Text = DbGridBusqueda.Columns(0)
+        TxtLin.Text = DBGridBusqueda.Columns(0)
         TxtLin.SetFocus
     'TIPO ENTRADAS
     ElseIf BTipoEntrada = True Then
-        TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(0).Text = DBGridBusqueda.Columns(0)
         TxtTexto.Item(0).SetFocus
     'PROVEEDOR
     ElseIf BProveedor = True Then
-        TxtTexto.Item(1).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(1).Text = DBGridBusqueda.Columns(0)
         TxtTexto.Item(1).SetFocus
     'TIPO DE DOCUMENTO
     ElseIf BTipoDocumento = True Then
-        TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(2).Text = DBGridBusqueda.Columns(0)
         TxtTexto.Item(2).SetFocus
     'TARNSPORTISTA
     ElseIf BTransportista = True Then
-        TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0)
+        TxtTexto.Item(4).Text = DBGridBusqueda.Columns(0)
         TxtTexto.Item(4).SetFocus
     End If
         TxtBuscar.Text = ""
@@ -3469,35 +3469,35 @@ Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
             If KeyAscii = 43 Then
                 'BODEGA
                 If BBodega = True Then
-                    TxtBodega.Text = DbGridBusqueda.Columns(0)
+                    TxtBodega.Text = DBGridBusqueda.Columns(0)
                     TxtBodega.SetFocus
                 'BODEGA DETALLE
                 ElseIf BBodegaDetalle = True Then
-                    TxtBod.Text = DbGridBusqueda.Columns(0)
+                    TxtBod.Text = DBGridBusqueda.Columns(0)
                     TxtBod.SetFocus
                 'PRODUCTO TERMINADO
                 ElseIf BProducto = True Then
-                    TxtCodPro.Text = DbGridBusqueda.Columns(0)
+                    TxtCodPro.Text = DBGridBusqueda.Columns(0)
                     TxtCodPro.SetFocus
                 'LINEAS
                 ElseIf BLineas = True Then
-                    TxtLin.Text = DbGridBusqueda.Columns(0)
+                    TxtLin.Text = DBGridBusqueda.Columns(0)
                     TxtLin.SetFocus
                 'TIPO ENTRADAS
                 ElseIf BTipoEntrada = True Then
-                    TxtTexto.Item(0).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(0).Text = DBGridBusqueda.Columns(0)
                     TxtTexto.Item(0).SetFocus
                 'PROVEEDOR
                 ElseIf BProveedor = True Then
-                    TxtTexto.Item(1).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(1).Text = DBGridBusqueda.Columns(0)
                     TxtTexto.Item(1).SetFocus
                 'TIPO DE DOCUMENTO
                 ElseIf BTipoDocumento = True Then
-                    TxtTexto.Item(2).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(2).Text = DBGridBusqueda.Columns(0)
                     TxtTexto.Item(2).SetFocus
                 'TARNSPORTISTA
                 ElseIf BTransportista = True Then
-                    TxtTexto.Item(4).Text = DbGridBusqueda.Columns(0)
+                    TxtTexto.Item(4).Text = DBGridBusqueda.Columns(0)
                     TxtTexto.Item(4).SetFocus
                 End If
                     TxtBuscar.Text = ""
@@ -3605,7 +3605,7 @@ Set REncabezado = New ADODB.Recordset
                 Call Abrir_Recordset(RDetalle, "Select D.Documento, D.FechaProduccion, D.Linea, D.FichaTecnica, F.Descrip, D.Tarima, D.Batch, D.Calidad, D.Bodega, D.CantidadEntrada, D.Saldo, D.OrdenProduccion, D.PesoEntrada, D.Estado, D.Barra, D.SerieBoleta, D.OrdenBoleta, D.BultoBoleta, D.FechaBoleta, D.BobinaBoleta, D.Observaciones From EncabezadoEntradasInventario E, DetalleEntradasInventario D, FichaTecnica F Where E.Documento = " & TxtDocIng & " And E.Documento = D.Documento And UPPER(D.FichaTecnica) = UPPER(F.Esp_Tec)")
             End If
             Llena_CamposDetalle
-            Set DBGridDetalle.DataSource = RDetalle
+            Set DbGridDetalle.DataSource = RDetalle
             
             If Err <> 0 Then
                 MsgBox Err.Description
@@ -3749,8 +3749,8 @@ Private Sub TxtBod_DblClick()
             TxtBuscar.SetFocus
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-            Set DbGridBusqueda.DataSource = RBusqueda
-            DbGridBusqueda.Columns(1).Width = "4000"
+            Set DBGridBusqueda.DataSource = RBusqueda
+            DBGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 
@@ -3783,8 +3783,8 @@ Private Sub TxtBod_KeyPress(KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 Private Sub TxtBodega_Change()
@@ -3819,8 +3819,8 @@ Private Sub TxtBodega_DblClick()
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
 
 End Sub
 Private Sub TxtBodega_GotFocus()
@@ -3852,8 +3852,8 @@ Private Sub TxtBodega_KeyPress(KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from BodegasInventario Order by CodigoBodega")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 
@@ -3994,8 +3994,8 @@ Private Sub Txtbuscar_Change()
 
     End If
         
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
 End Sub
 Private Sub TxtBuscar_KeyPress(KeyAscii As Integer)
         If KeyAscii = 13 Then
@@ -4067,8 +4067,8 @@ Private Sub TxtCodPro_DblClick()
                 FrameBuscar.Visible = True
                 TxtBuscar.SetFocus
                 Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip, MaterialEmpaque, Size from FichaTecnica Where Activa = -1 Order by Esp_Tec")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
 End Sub
 
 Private Sub TxtCodPro_GotFocus()
@@ -4095,8 +4095,8 @@ Private Sub TxtCodPro_KeyPress(KeyAscii As Integer)
                    FrameBuscar.Visible = True
                    TxtBuscar.SetFocus
                    Call Abrir_Recordset(RBusqueda, "Select Esp_Tec, Descrip, MaterialEmpaque, Size from FichaTecnica Where Activa = -1 Order by Esp_Tec")
-                   Set DbGridBusqueda.DataSource = RBusqueda
-                   DbGridBusqueda.Columns(1).Width = "4000"
+                   Set DBGridBusqueda.DataSource = RBusqueda
+                   DBGridBusqueda.Columns(1).Width = "4000"
                 End If
 End Sub
 
@@ -4156,8 +4156,8 @@ Private Sub Txtlin_DblClick()
         FrameBuscar.Visible = True
         TxtBuscar.SetFocus
         Call Abrir_Recordset(RBusqueda, "Select * from Lineas")
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
 End Sub
 
 Private Sub TxtLin_GotFocus()
@@ -4183,8 +4183,8 @@ Private Sub TxtLin_KeyPress(KeyAscii As Integer)
         FrameBuscar.Visible = True
         TxtBuscar.SetFocus
         Call Abrir_Recordset(RBusqueda, "Select * from Lineas")
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
     End If
 
 End Sub
@@ -4679,8 +4679,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from TiposEntradasInventario")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'PROVEEDOR
             ElseIf Index = 1 Then
                 TxtBuscar.Visible = True
@@ -4702,8 +4702,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'TIPO DE DOCUMENTO
             ElseIf Index = 2 Then
                 TxtBuscar.Visible = True
@@ -4725,8 +4725,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoDocumento, Descripcion from Documentos")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'TRANSPORTISTA
             ElseIf Index = 4 Then
                 TxtBuscar.Visible = True
@@ -4748,8 +4748,8 @@ Private Sub Txttexto_DblClick(Index As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from Transportistas")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             End If
 End Sub
 
@@ -4779,8 +4779,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from TiposEntradasInventario")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'PROVEEDOR
             ElseIf Index = 1 Then
                 TxtBuscar.Visible = True
@@ -4802,8 +4802,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoProveedor, Descripcion from Proveedores")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'TIPO DE DOCUMENTO
             ElseIf Index = 2 Then
                 TxtBuscar.Visible = True
@@ -4825,8 +4825,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select CodigoDocumento, Descripcion from Documentos")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             'TRANSPORTISTA
             ElseIf Index = 4 Then
                 TxtBuscar.Visible = True
@@ -4848,8 +4848,8 @@ Private Sub TxtTexto_KeyPress(Index As Integer, KeyAscii As Integer)
                 TxtBuscar.SetFocus
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select Codigo, Descripcion from Transportistas")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
             End If
         End If
 
