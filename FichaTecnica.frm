@@ -275,7 +275,6 @@ Begin VB.Form FichaTecnica
       TabPicture(1)   =   "FichaTecnica.frx":82BC
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "DbGridFichaTecnica"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Seleccion O Busquedad De Datos"
       TabPicture(2)   =   "FichaTecnica.frx":870E
@@ -1693,7 +1692,7 @@ Sub botones()
          CmdBotones2.Item(3).Visible = False
          CmdBotones2.Item(4).Visible = False
 
-         DbGridFichaTecnica.Visible = False
+         Dbgridfichatecnica.Visible = False
          FrameOpciones.Visible = False
                   
     Else
@@ -1712,7 +1711,7 @@ Sub botones()
          CmdBotones2.Item(3).Visible = True
          CmdBotones2.Item(4).Visible = True
 
-         DbGridFichaTecnica.Visible = True
+         Dbgridfichatecnica.Visible = True
          FrameOpciones.Visible = True
          
     End If
@@ -1758,7 +1757,7 @@ Private Sub CmdActualizar_Click()
 MousePointer = 11
             Set RFichaTecnica = New ADODB.Recordset
             Call Abrir_Recordset(RFichaTecnica, "Select * from FichaTecnica")
-            Set DbGridFichaTecnica.DataSource = RFichaTecnica
+            Set Dbgridfichatecnica.DataSource = RFichaTecnica
 MousePointer = 0
 End Sub
 
@@ -1887,7 +1886,7 @@ MousePointer = 11
             End If
     End If
             
-            Set DbGridFichaTecnica.DataSource = RFichaTecnica
+            Set Dbgridfichatecnica.DataSource = RFichaTecnica
             TabFichasTecnicas.Tab = 1
 MousePointer = 0
 
@@ -2180,21 +2179,21 @@ End Sub
 Private Sub DBGridBusqueda_DblClick()
     'PARA SELECCIONAR LA VARIABLE
     If VVariable = True Then
-        TxtVar.Text = DbGridBusqueda.Columns(0)
+        TxtVar.Text = DBGridBusqueda.Columns(0)
         TxtVar.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR LA ATRIBUTO
     ElseIf VAtributo = True Then
-        TxtAtr.Text = DbGridBusqueda.Columns(0)
+        TxtAtr.Text = DBGridBusqueda.Columns(0)
         TxtAtr.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR EL TIPO DE FICHA TECNICA
     ElseIf VTipo = True Then
-        TxtGru.Text = DbGridBusqueda.Columns(0)
+        TxtGru.Text = DBGridBusqueda.Columns(0)
         TxtGru.SetFocus
         FrameConsultas.Visible = False
     ElseIf VTipoVenta = True Then
-        TxtTipVen.Text = DbGridBusqueda.Columns(0)
+        TxtTipVen.Text = DBGridBusqueda.Columns(0)
         TxtTipVen.SetFocus
         FrameConsultas.Visible = False
     End If
@@ -2207,21 +2206,21 @@ Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
 If KeyAscii = 43 Then
     'PARA SELECCIONAR LA VARIABLE
     If VVariable = True Then
-        TxtVar.Text = DbGridBusqueda.Columns(0)
+        TxtVar.Text = DBGridBusqueda.Columns(0)
         TxtVar.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR LA ATRIBUTO
     ElseIf VAtributo = True Then
-        TxtAtr.Text = DbGridBusqueda.Columns(0)
+        TxtAtr.Text = DBGridBusqueda.Columns(0)
         TxtAtr.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR EL TIPO DE FICHA TECNICA
     ElseIf VTipo = True Then
-        TxtGru.Text = DbGridBusqueda.Columns(0)
+        TxtGru.Text = DBGridBusqueda.Columns(0)
         TxtGru.SetFocus
         FrameConsultas.Visible = False
     ElseIf VTipoVenta = True Then
-        TxtTipVen.Text = DbGridBusqueda.Columns(0)
+        TxtTipVen.Text = DBGridBusqueda.Columns(0)
         TxtTipVen.SetFocus
         FrameConsultas.Visible = False
     End If
@@ -2254,14 +2253,14 @@ Private Sub Form_Load()
 
         Set RFichaTecnica = New ADODB.Recordset
         Call Abrir_Recordset(RFichaTecnica, "Select * From FichaTecnica")
-        Set DbGridFichaTecnica.DataSource = RFichaTecnica
+        Set Dbgridfichatecnica.DataSource = RFichaTecnica
         Llena_Campos
 
     
     'PARA HABILITAR EL GRID SOLO A USUARIOS AVANZADOS
     If GEditar = True Then
-        DbGridFichaTecnica.AllowAddNew = True
-        DbGridFichaTecnica.AllowUpdate = True
+        Dbgridfichatecnica.AllowAddNew = True
+        Dbgridfichatecnica.AllowUpdate = True
     End If
     
 End Sub
@@ -2319,8 +2318,8 @@ Private Sub TxtAtr_DblClick()
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from Atributos")
-            Set DbGridBusqueda.DataSource = RBusqueda
-            DbGridBusqueda.Columns(1).Width = "4000"
+            Set DBGridBusqueda.DataSource = RBusqueda
+            DBGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
 End Sub
@@ -2343,8 +2342,8 @@ Private Sub TxtAtr_KeyPress(KeyAscii As Integer)
                 VTipoVenta = False
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from Atributos")
-                Set DbGridBusqueda.DataSource = RBusqueda
-                DbGridBusqueda.Columns(1).Width = "4000"
+                Set DBGridBusqueda.DataSource = RBusqueda
+                DBGridBusqueda.Columns(1).Width = "4000"
                 FrameConsultas.Visible = True
                 TxtBusqueda.SetFocus
             End If
@@ -2450,8 +2449,8 @@ Private Sub TxtBusqueda_Change()
         
         End If
 
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
         
 End Sub
 
@@ -2582,8 +2581,8 @@ Private Sub TxtGru_DblClick()
         VTipoVenta = False
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTipos")
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2605,8 +2604,8 @@ Private Sub TxtGru_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTipos")
-            Set DbGridBusqueda.DataSource = RBusqueda
-            DbGridBusqueda.Columns(1).Width = "4000"
+            Set DBGridBusqueda.DataSource = RBusqueda
+            DBGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
     End If
@@ -2683,8 +2682,8 @@ Private Sub TxtTipVen_DblClick()
         VTipoVenta = True
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTiposVentas")
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2701,8 +2700,8 @@ Private Sub TxtTipVen_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTiposVentas")
-            Set DbGridBusqueda.DataSource = RBusqueda
-            DbGridBusqueda.Columns(1).Width = "4000"
+            Set DBGridBusqueda.DataSource = RBusqueda
+            DBGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
     End If
@@ -2759,8 +2758,8 @@ Private Sub TxtVar_DblClick()
         VTipoVenta = False
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from VariablesDescripcion")
-        Set DbGridBusqueda.DataSource = RBusqueda
-        DbGridBusqueda.Columns(1).Width = "4000"
+        Set DBGridBusqueda.DataSource = RBusqueda
+        DBGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2782,8 +2781,8 @@ Private Sub TxtVar_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from VariablesDescripcion")
-            Set DbGridBusqueda.DataSource = RBusqueda
-            DbGridBusqueda.Columns(1).Width = "4000"
+            Set DBGridBusqueda.DataSource = RBusqueda
+            DBGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
         End If
