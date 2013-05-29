@@ -1693,7 +1693,7 @@ Sub botones()
          CmdBotones2.Item(3).Visible = False
          CmdBotones2.Item(4).Visible = False
 
-         Dbgridfichatecnica.Visible = False
+         DbGridFichaTecnica.Visible = False
          FrameOpciones.Visible = False
                   
     Else
@@ -1712,7 +1712,7 @@ Sub botones()
          CmdBotones2.Item(3).Visible = True
          CmdBotones2.Item(4).Visible = True
 
-         Dbgridfichatecnica.Visible = True
+         DbGridFichaTecnica.Visible = True
          FrameOpciones.Visible = True
          
     End If
@@ -1758,7 +1758,7 @@ Private Sub CmdActualizar_Click()
 MousePointer = 11
             Set RFichaTecnica = New ADODB.Recordset
             Call Abrir_Recordset(RFichaTecnica, "Select * from FichaTecnica")
-            Set Dbgridfichatecnica.DataSource = RFichaTecnica
+            Set DbGridFichaTecnica.DataSource = RFichaTecnica
 MousePointer = 0
 End Sub
 
@@ -1887,7 +1887,7 @@ MousePointer = 11
             End If
     End If
             
-            Set Dbgridfichatecnica.DataSource = RFichaTecnica
+            Set DbGridFichaTecnica.DataSource = RFichaTecnica
             TabFichasTecnicas.Tab = 1
 MousePointer = 0
 
@@ -2180,21 +2180,21 @@ End Sub
 Private Sub DBGridBusqueda_DblClick()
     'PARA SELECCIONAR LA VARIABLE
     If VVariable = True Then
-        TxtVar.Text = DBGridBusqueda.Columns(0)
+        TxtVar.Text = DbGridBusqueda.Columns(0)
         TxtVar.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR LA ATRIBUTO
     ElseIf VAtributo = True Then
-        TxtAtr.Text = DBGridBusqueda.Columns(0)
+        TxtAtr.Text = DbGridBusqueda.Columns(0)
         TxtAtr.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR EL TIPO DE FICHA TECNICA
     ElseIf VTipo = True Then
-        TxtGru.Text = DBGridBusqueda.Columns(0)
+        TxtGru.Text = DbGridBusqueda.Columns(0)
         TxtGru.SetFocus
         FrameConsultas.Visible = False
     ElseIf VTipoVenta = True Then
-        TxtTipVen.Text = DBGridBusqueda.Columns(0)
+        TxtTipVen.Text = DbGridBusqueda.Columns(0)
         TxtTipVen.SetFocus
         FrameConsultas.Visible = False
     End If
@@ -2207,21 +2207,21 @@ Private Sub DBGridBusqueda_KeyPress(KeyAscii As Integer)
 If KeyAscii = 43 Then
     'PARA SELECCIONAR LA VARIABLE
     If VVariable = True Then
-        TxtVar.Text = DBGridBusqueda.Columns(0)
+        TxtVar.Text = DbGridBusqueda.Columns(0)
         TxtVar.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR LA ATRIBUTO
     ElseIf VAtributo = True Then
-        TxtAtr.Text = DBGridBusqueda.Columns(0)
+        TxtAtr.Text = DbGridBusqueda.Columns(0)
         TxtAtr.SetFocus
         FrameConsultas.Visible = False
     'PARA SELECCIONAR EL TIPO DE FICHA TECNICA
     ElseIf VTipo = True Then
-        TxtGru.Text = DBGridBusqueda.Columns(0)
+        TxtGru.Text = DbGridBusqueda.Columns(0)
         TxtGru.SetFocus
         FrameConsultas.Visible = False
     ElseIf VTipoVenta = True Then
-        TxtTipVen.Text = DBGridBusqueda.Columns(0)
+        TxtTipVen.Text = DbGridBusqueda.Columns(0)
         TxtTipVen.SetFocus
         FrameConsultas.Visible = False
     End If
@@ -2254,14 +2254,14 @@ Private Sub Form_Load()
 
         Set RFichaTecnica = New ADODB.Recordset
         Call Abrir_Recordset(RFichaTecnica, "Select * From FichaTecnica")
-        Set Dbgridfichatecnica.DataSource = RFichaTecnica
+        Set DbGridFichaTecnica.DataSource = RFichaTecnica
         Llena_Campos
 
     
     'PARA HABILITAR EL GRID SOLO A USUARIOS AVANZADOS
     If GEditar = True Then
-        Dbgridfichatecnica.AllowAddNew = True
-        Dbgridfichatecnica.AllowUpdate = True
+        DbGridFichaTecnica.AllowAddNew = True
+        DbGridFichaTecnica.AllowUpdate = True
     End If
     
 End Sub
@@ -2319,8 +2319,8 @@ Private Sub TxtAtr_DblClick()
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from Atributos")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
 End Sub
@@ -2343,8 +2343,8 @@ Private Sub TxtAtr_KeyPress(KeyAscii As Integer)
                 VTipoVenta = False
                 Set RBusqueda = New ADODB.Recordset
                 Call Abrir_Recordset(RBusqueda, "Select * from Atributos")
-                Set DBGridBusqueda.DataSource = RBusqueda
-                DBGridBusqueda.Columns(1).Width = "4000"
+                Set DbGridBusqueda.DataSource = RBusqueda
+                DbGridBusqueda.Columns(1).Width = "4000"
                 FrameConsultas.Visible = True
                 TxtBusqueda.SetFocus
             End If
@@ -2450,8 +2450,8 @@ Private Sub TxtBusqueda_Change()
         
         End If
 
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
         
 End Sub
 
@@ -2582,8 +2582,8 @@ Private Sub TxtGru_DblClick()
         VTipoVenta = False
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTipos")
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2605,8 +2605,8 @@ Private Sub TxtGru_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTipos")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
     End If
@@ -2683,8 +2683,8 @@ Private Sub TxtTipVen_DblClick()
         VTipoVenta = True
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTiposVentas")
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2701,8 +2701,8 @@ Private Sub TxtTipVen_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from FichaTecnicaTiposVentas")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
     End If
@@ -2759,8 +2759,8 @@ Private Sub TxtVar_DblClick()
         VTipoVenta = False
         Set RBusqueda = New ADODB.Recordset
         Call Abrir_Recordset(RBusqueda, "Select * from VariablesDescripcion")
-        Set DBGridBusqueda.DataSource = RBusqueda
-        DBGridBusqueda.Columns(1).Width = "4000"
+        Set DbGridBusqueda.DataSource = RBusqueda
+        DbGridBusqueda.Columns(1).Width = "4000"
         FrameConsultas.Visible = True
         TxtBusqueda.SetFocus
 End Sub
@@ -2782,8 +2782,8 @@ Private Sub TxtVar_KeyPress(KeyAscii As Integer)
             VTipoVenta = False
             Set RBusqueda = New ADODB.Recordset
             Call Abrir_Recordset(RBusqueda, "Select * from VariablesDescripcion")
-            Set DBGridBusqueda.DataSource = RBusqueda
-            DBGridBusqueda.Columns(1).Width = "4000"
+            Set DbGridBusqueda.DataSource = RBusqueda
+            DbGridBusqueda.Columns(1).Width = "4000"
             FrameConsultas.Visible = True
             TxtBusqueda.SetFocus
         End If
@@ -2811,7 +2811,7 @@ On Error Resume Next
                         End If
                         
                         If IsNull(RFichaTecnica!Envases) Then
-                            TxtEnv.Text = ""
+                            TxtEnv.Text = "0"
                         Else
                             TxtEnv.Text = RFichaTecnica!Envases
                         End If
@@ -2901,19 +2901,19 @@ On Error Resume Next
                         End If
                                 
                         If IsNull(RFichaTecnica!PesoxUnidad) Then
-                            TxtPesUni.Text = ""
+                            TxtPesUni.Text = "0"
                         Else
                             TxtPesUni.Text = RFichaTecnica!PesoxUnidad
                         End If
                         
                         If IsNull(RFichaTecnica!UnidadesxLamina) Then
-                            TxtUniLam.Text = ""
+                            TxtUniLam.Text = "0"
                         Else
                             TxtUniLam.Text = RFichaTecnica!UnidadesxLamina
                         End If
                         
                         If IsNull(RFichaTecnica!UnidadesxCaja) Then
-                            TxtUniCaj.Text = ""
+                            TxtUniCaj.Text = "0"
                         Else
                             TxtUniCaj.Text = RFichaTecnica!UnidadesxCaja
                         End If
@@ -2925,7 +2925,7 @@ On Error Resume Next
                         End If
                         
                         If IsNull(RFichaTecnica!espesor) Then
-                            TxtEsp.Text = ""
+                            TxtEsp.Text = "0.0"
                         Else
                             TxtEsp.Text = RFichaTecnica!espesor
                         End If
@@ -2950,7 +2950,7 @@ On Error Resume Next
                             TxtDes3.Text = RFichaTecnica!TercerNombre
                         End If
                         If IsNull(RFichaTecnica!PesoxUnidadConTapa) Then
-                            TxtPesUniTap.Text = ""
+                            TxtPesUniTap.Text = "0"
                         Else
                             TxtPesUniTap.Text = RFichaTecnica!PesoxUnidadConTapa
                         End If
