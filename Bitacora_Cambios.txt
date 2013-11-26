@@ -1,4 +1,4 @@
-29/05/2013
+29/05/2013  16:04
 - Se arregló problema para guardar UPDATE en FichasTecnicas, indicaba un error de sintaxis al realizar una modificacion en alguna fichatecnica.
 
 
