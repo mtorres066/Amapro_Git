@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Reportes 
@@ -9,12 +9,12 @@ Begin VB.Form Reportes
    ClientHeight    =   6840
    ClientLeft      =   60
    ClientTop       =   345
-   ClientWidth     =   12000
+   ClientWidth     =   12150
    Icon            =   "Reportes.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   6840
-   ScaleWidth      =   12000
+   ScaleWidth      =   12150
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame FrameBuscar 
       Caption         =   "Busqueda De Datos"
@@ -28,7 +28,7 @@ Begin VB.Form Reportes
          Strikethrough   =   0   'False
       EndProperty
       Height          =   6615
-      Left            =   0
+      Left            =   120
       TabIndex        =   69
       Top             =   120
       Visible         =   0   'False
@@ -264,75 +264,75 @@ Begin VB.Form Reportes
       TabCaption(1)   =   "Produccion Liberada"
       TabPicture(1)   =   "Reportes.frx":384A
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "DtpLibFecFin"
-      Tab(1).Control(1)=   "DtpLibFecIni"
-      Tab(1).Control(2)=   "TxtLib"
-      Tab(1).Control(3)=   "Frame1"
-      Tab(1).Control(4)=   "OptProduccionLiberado(2)"
+      Tab(1).Control(0)=   "LblLibEti"
+      Tab(1).Control(1)=   "LblLibDes"
+      Tab(1).Control(2)=   "LblLibFecIni"
+      Tab(1).Control(3)=   "LblFecFin(0)"
+      Tab(1).Control(4)=   "OptProduccionLiberado(0)"
       Tab(1).Control(5)=   "OptProduccionLiberado(1)"
-      Tab(1).Control(6)=   "OptProduccionLiberado(0)"
-      Tab(1).Control(7)=   "LblFecFin(0)"
-      Tab(1).Control(8)=   "LblLibFecIni"
-      Tab(1).Control(9)=   "LblLibDes"
-      Tab(1).Control(10)=   "LblLibEti"
+      Tab(1).Control(6)=   "OptProduccionLiberado(2)"
+      Tab(1).Control(7)=   "Frame1"
+      Tab(1).Control(8)=   "TxtLib"
+      Tab(1).Control(9)=   "DtpLibFecIni"
+      Tab(1).Control(10)=   "DtpLibFecFin"
       Tab(1).ControlCount=   11
       TabCaption(2)   =   "Rutinas"
       TabPicture(2)   =   "Reportes.frx":3B64
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "OptRutRep"
-      Tab(2).Control(1)=   "TxtLin"
-      Tab(2).Control(2)=   "OptRutDet"
-      Tab(2).Control(3)=   "OptRutArr"
-      Tab(2).Control(4)=   "OptRutFicTec"
-      Tab(2).Control(5)=   "FrameRutinas"
-      Tab(2).Control(6)=   "TxtHorRut"
-      Tab(2).Control(7)=   "MskFecRut"
-      Tab(2).Control(8)=   "MskFecFin"
-      Tab(2).Control(9)=   "LblHas"
-      Tab(2).Control(10)=   "LblRutinas(0)"
-      Tab(2).Control(11)=   "LblRutinas(1)"
-      Tab(2).Control(12)=   "LblRutinas(2)"
-      Tab(2).Control(13)=   "LblDesRut"
+      Tab(2).Control(0)=   "LblDesRut"
+      Tab(2).Control(1)=   "LblRutinas(2)"
+      Tab(2).Control(2)=   "LblRutinas(1)"
+      Tab(2).Control(3)=   "LblRutinas(0)"
+      Tab(2).Control(4)=   "LblHas"
+      Tab(2).Control(5)=   "MskFecFin"
+      Tab(2).Control(6)=   "MskFecRut"
+      Tab(2).Control(7)=   "TxtHorRut"
+      Tab(2).Control(8)=   "FrameRutinas"
+      Tab(2).Control(9)=   "OptRutFicTec"
+      Tab(2).Control(10)=   "OptRutArr"
+      Tab(2).Control(11)=   "OptRutDet"
+      Tab(2).Control(12)=   "TxtLin"
+      Tab(2).Control(13)=   "OptRutRep"
       Tab(2).ControlCount=   14
       TabCaption(3)   =   "Batch"
       TabPicture(3)   =   "Reportes.frx":443E
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "LblBatDesLin"
-      Tab(3).Control(1)=   "Label8(1)"
-      Tab(3).Control(2)=   "Label8(0)"
-      Tab(3).Control(3)=   "TxtBatLin"
-      Tab(3).Control(4)=   "FrameBatchUnidadMedida"
-      Tab(3).Control(5)=   "FrameBatchTipoDeReporte"
-      Tab(3).Control(6)=   "TxtBatch"
-      Tab(3).Control(7)=   "OptBatNum"
+      Tab(3).Control(0)=   "OptBatNum"
+      Tab(3).Control(1)=   "TxtBatch"
+      Tab(3).Control(2)=   "FrameBatchTipoDeReporte"
+      Tab(3).Control(3)=   "FrameBatchUnidadMedida"
+      Tab(3).Control(4)=   "TxtBatLin"
+      Tab(3).Control(5)=   "Label8(0)"
+      Tab(3).Control(6)=   "Label8(1)"
+      Tab(3).Control(7)=   "LblBatDesLin"
       Tab(3).ControlCount=   8
       TabCaption(4)   =   "Fichas Tecnicas"
       TabPicture(4)   =   "Reportes.frx":4D18
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "LblDesFicTec"
-      Tab(4).Control(1)=   "LblFichaTecnica"
-      Tab(4).Control(2)=   "FrameFichaTecnica"
+      Tab(4).Control(0)=   "FrameFichaTecnica2"
+      Tab(4).Control(1)=   "OptFichaTecnica(0)"
+      Tab(4).Control(2)=   "TxtFichaTecnica"
       Tab(4).Control(3)=   "OptFichaTecnica(3)"
-      Tab(4).Control(4)=   "TxtFichaTecnica"
-      Tab(4).Control(5)=   "OptFichaTecnica(0)"
-      Tab(4).Control(6)=   "FrameFichaTecnica2"
+      Tab(4).Control(4)=   "FrameFichaTecnica"
+      Tab(4).Control(5)=   "LblFichaTecnica"
+      Tab(4).Control(6)=   "LblDesFicTec"
       Tab(4).ControlCount=   7
       TabCaption(5)   =   "Catalogos"
       TabPicture(5)   =   "Reportes.frx":55F2
       Tab(5).ControlEnabled=   0   'False
-      Tab(5).Control(0)=   "OptVarCod"
-      Tab(5).Control(1)=   "TxtVar"
+      Tab(5).Control(0)=   "LblDesHoj"
+      Tab(5).Control(1)=   "Label6"
       Tab(5).Control(2)=   "LblDesCat"
-      Tab(5).Control(3)=   "Label6"
-      Tab(5).Control(4)=   "LblDesHoj"
+      Tab(5).Control(3)=   "TxtVar"
+      Tab(5).Control(4)=   "OptVarCod"
       Tab(5).ControlCount=   5
       TabCaption(6)   =   "Defectos"
       TabPicture(6)   =   "Reportes.frx":5ECC
       Tab(6).ControlEnabled=   0   'False
-      Tab(6).Control(0)=   "TxtDefectos"
-      Tab(6).Control(1)=   "OptDefTip"
-      Tab(6).Control(2)=   "OptDefCod"
-      Tab(6).Control(3)=   "LblDefectos"
+      Tab(6).Control(0)=   "LblDefectos"
+      Tab(6).Control(1)=   "OptDefCod"
+      Tab(6).Control(2)=   "OptDefTip"
+      Tab(6).Control(3)=   "TxtDefectos"
       Tab(6).ControlCount=   4
       Begin VB.Frame Frame2 
          Caption         =   "Tipo Busqueda"
@@ -518,7 +518,7 @@ Begin VB.Form Reportes
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   53084163
+         Format          =   61079555
          CurrentDate     =   37550
       End
       Begin MSComCtl2.DTPicker DtpLibFecIni 
@@ -531,7 +531,7 @@ Begin VB.Form Reportes
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   53084163
+         Format          =   61079555
          CurrentDate     =   37550
       End
       Begin VB.TextBox TxtLib 
@@ -1377,7 +1377,7 @@ Begin VB.Form Reportes
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   53084163
+         Format          =   61079555
          CurrentDate     =   36926
       End
       Begin MSComCtl2.DTPicker PFecProIni 
@@ -1390,7 +1390,7 @@ Begin VB.Form Reportes
          _ExtentY        =   450
          _Version        =   393216
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   53084163
+         Format          =   61079555
          CurrentDate     =   36926
       End
       Begin VB.OptionButton OptProduccion 
