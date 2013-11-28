@@ -1,3 +1,8 @@
+Fecha Cambio: 28/11/2013 Misma Ver. 29/05/2013  16:04
+No habia actualizado el ultimo cambio al ReporteE.rpt. El tamaño de Columnas en el Reporte Ejecutivo para que cupiera PUEBLA.
+No se tocó el .EXE
+
+
 29/05/2013  16:04
 - Se arregló problema para guardar UPDATE en FichasTecnicas, indicaba un error de sintaxis al realizar una modificacion en alguna fichatecnica.
 
